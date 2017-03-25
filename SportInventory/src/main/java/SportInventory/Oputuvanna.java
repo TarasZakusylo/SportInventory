@@ -53,7 +53,6 @@ public class Oputuvanna extends JFrame {
 						|| s_choice_VudSportu.equals("Волейбол") && boolean_Komanda == false
 						|| s_choice_VudSportu.equals("Ганбол") && boolean_Komanda == false) {
 
-					System.out.println("Ф");
 					l_kartunka.setBounds(0, 0, 0, 0);
 
 					choice_Komanda.setBounds(544, 218, 184, 22);
@@ -187,15 +186,6 @@ public class Oputuvanna extends JFrame {
 		getContentPane().add(l_VudSportu);
 
 		choice_VudSportu = new Choice();
-		choice_VudSportu.addMouseListener(new MouseAdapter() {
-			// public void mouseClicked(MouseEvent arg0) {
-			// String s_choice_VudSportu = choice_VudSportu.getSelectedItem();
-			// if(s_choice_VudSportu.equals("Футбол")){
-			// System.out.println("Футбол");
-			// }
-			// }
-
-		});
 		choice_VudSportu.setBounds(226, 446, 249, 22);
 		getContentPane().add(choice_VudSportu);
 		choice_VudSportu.add("Теніс");
@@ -231,9 +221,17 @@ public class Oputuvanna extends JFrame {
 				String s_choice_Finansu = choice_Finansu.getSelectedItem();
 				String s_choice_VudSportu = choice_VudSportu.getSelectedItem();
 				String s_choice_Uminna = choice_Uminna.getSelectedItem();
+				String s_choice_Komanda = choice_Komanda.getSelectedItem();
 
-				new Oputuvanna1(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,
-						s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna);
+				if (s_choice_VudSportu.equals("Волейбол") || s_choice_VudSportu.equals("Футбол")
+						|| s_choice_VudSportu.equals("Баскетбол") || s_choice_VudSportu.equals("Ганбол")) {
+					new Oputuvanna1(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,
+							s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna, s_choice_Komanda);
+				} else {
+					new Oputuvanna1(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,
+							s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna);
+				}
+
 				setVisible(false);
 			}
 		});
