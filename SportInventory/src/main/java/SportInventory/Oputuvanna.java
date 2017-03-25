@@ -8,9 +8,12 @@ import java.awt.Window;
 import java.awt.Choice;
 import java.awt.Container;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Oputuvanna extends JFrame {
 
@@ -32,8 +35,35 @@ public class Oputuvanna extends JFrame {
 	private Choice choice_VudSportu;
 	private JLabel l_Uminna;
 	private Choice choice_Uminna;
+	private JLabel l_kartunka;
+	private JLabel l_fon;
+	private JLabel l_Komanda;
+	private JLabel l_Komanda1;
+	private Choice choice_Komanda;
+
+	private boolean boolean_Komanda = false;
 
 	public Oputuvanna() {
+		getContentPane().addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				String s_choice_VudSportu = choice_VudSportu.getSelectedItem();
+				if (s_choice_VudSportu.equals("Футбол") && boolean_Komanda == false
+						|| s_choice_VudSportu.equals("Баскетбол") && boolean_Komanda == false
+						|| s_choice_VudSportu.equals("Волейбол") && boolean_Komanda == false
+						|| s_choice_VudSportu.equals("Ганбол") && boolean_Komanda == false) {
+
+					System.out.println("Ф");
+					l_kartunka.setBounds(0, 0, 0, 0);
+
+					choice_Komanda.setBounds(544, 218, 184, 22);
+					l_Komanda.setBounds(544, 132, 184, 28);
+					l_Komanda1.setBounds(544, 172, 184, 28);
+					boolean_Komanda = true;
+
+				}
+			}
+		});
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(800, 600);
@@ -157,13 +187,24 @@ public class Oputuvanna extends JFrame {
 		getContentPane().add(l_VudSportu);
 
 		choice_VudSportu = new Choice();
+		choice_VudSportu.addMouseListener(new MouseAdapter() {
+			// public void mouseClicked(MouseEvent arg0) {
+			// String s_choice_VudSportu = choice_VudSportu.getSelectedItem();
+			// if(s_choice_VudSportu.equals("Футбол")){
+			// System.out.println("Футбол");
+			// }
+			// }
+
+		});
 		choice_VudSportu.setBounds(226, 446, 249, 22);
 		getContentPane().add(choice_VudSportu);
-		choice_VudSportu.add("Волейбол");
-		choice_VudSportu.add("Фубтол");
-		choice_VudSportu.add("Баскетбол");
 		choice_VudSportu.add("Теніс");
 		choice_VudSportu.add("Легка атлетика");
+
+		choice_VudSportu.add("Волейбол");
+		choice_VudSportu.add("Футбол");
+		choice_VudSportu.add("Баскетбол");
+		choice_VudSportu.add("Ганбол");
 
 		l_Uminna = new JLabel("Рівень умінь:");
 		l_Uminna.setFont(new Font("Times New Roman", Font.PLAIN, 23));
@@ -198,6 +239,48 @@ public class Oputuvanna extends JFrame {
 		});
 		b_Dali.setBounds(530, 507, 226, 30);
 		getContentPane().add(b_Dali);
+
+		l_Komanda = new JLabel("Кількість членів");
+		l_Komanda.setHorizontalAlignment(SwingConstants.CENTER);
+		l_Komanda.setFont(new Font("Times New Roman", Font.PLAIN, 23));
+		l_Komanda.setBounds(0, 0, 0, 0);
+		getContentPane().add(l_Komanda);
+
+		l_Komanda1 = new JLabel(" команди:");
+		l_Komanda1.setHorizontalAlignment(SwingConstants.CENTER);
+		l_Komanda1.setFont(new Font("Times New Roman", Font.PLAIN, 23));
+		l_Komanda1.setBounds(0, 0, 0, 0);
+		getContentPane().add(l_Komanda1);
+
+		choice_Komanda = new Choice();
+		choice_Komanda.setBounds(0, -50, 0, 0);
+		getContentPane().add(choice_Komanda);
+		choice_Komanda.add("1");
+		choice_Komanda.add("2");
+		choice_Komanda.add("3");
+		choice_Komanda.add("4");
+		choice_Komanda.add("5");
+		choice_Komanda.add("6");
+		choice_Komanda.add("7");
+		choice_Komanda.add("8");
+		choice_Komanda.add("9");
+		choice_Komanda.add("10");
+		choice_Komanda.add("11");
+		choice_Komanda.add("12");
+		choice_Komanda.add("13");
+		choice_Komanda.add("14");
+		choice_Komanda.add("15 і більше");
+
+		l_kartunka = new JLabel("");
+		l_kartunka.setHorizontalAlignment(SwingConstants.CENTER);
+		l_kartunka.setIcon(new ImageIcon("res/kartunka_Zaput1.png"));
+		l_kartunka.setBounds(510, 66, 260, 428);
+		getContentPane().add(l_kartunka);
+
+		l_fon = new JLabel("");
+		l_fon.setIcon(new ImageIcon("res/fon_Zaput1.png"));
+		l_fon.setBounds(0, 0, 800, 600);
+		getContentPane().add(l_fon);
 
 		setVisible(true);
 	}
