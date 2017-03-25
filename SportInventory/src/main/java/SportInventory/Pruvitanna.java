@@ -53,7 +53,7 @@ public class Pruvitanna extends JFrame{
 		getContentPane().addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				new EC1("Опитування 1");
+				new Oputuvanna();
 				setVisible(false);
 			}
 		});
