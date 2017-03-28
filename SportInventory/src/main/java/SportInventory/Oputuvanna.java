@@ -195,6 +195,7 @@ public class Oputuvanna extends JFrame {
 		choice_VudSportu.add("Футбол");
 		choice_VudSportu.add("Баскетбол");
 		choice_VudSportu.add("Ганбол");
+		choice_VudSportu.add("Хокей");
 
 		l_Uminna = new JLabel("Рівень умінь:");
 		l_Uminna.setFont(new Font("Times New Roman", Font.PLAIN, 23));
@@ -224,7 +225,8 @@ public class Oputuvanna extends JFrame {
 				String s_choice_Komanda = choice_Komanda.getSelectedItem();
 
 				if (s_choice_VudSportu.equals("Волейбол") || s_choice_VudSportu.equals("Футбол")
-						|| s_choice_VudSportu.equals("Баскетбол") || s_choice_VudSportu.equals("Ганбол")) {
+						|| s_choice_VudSportu.equals("Баскетбол") || s_choice_VudSportu.equals("Ганбол")
+						||  s_choice_VudSportu.equals("Хокей")) {
 					new Oputuvanna1(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,
 							s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna, s_choice_Komanda);
 				} else {
