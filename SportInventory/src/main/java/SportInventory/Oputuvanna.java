@@ -2,11 +2,13 @@ package SportInventory;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Window;
 import java.awt.Choice;
 import java.awt.Container;
+import java.awt.Desktop;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.URI;
 
 public class Oputuvanna extends JFrame {
 
@@ -41,24 +44,55 @@ public class Oputuvanna extends JFrame {
 	private JLabel l_Komanda1;
 	private Choice choice_Komanda;
 
-	private boolean boolean_Komanda = false;
+	private boolean boolean_ZminaSporty = false;
+
+	private JLabel l_VudStrilbu;
+	private JLabel l_VudStrilbu1;
+	private Choice choice_VudStrilbu;
+	private JLabel l_VudZbroi;
+	private JLabel l_VudZbroi1;
+	private Choice choice_VudZbroi;
+
+	Desktop desktop = Desktop.getDesktop();
 
 	public Oputuvanna() {
 		getContentPane().addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				String s_choice_VudSportu = choice_VudSportu.getSelectedItem();
-				if (s_choice_VudSportu.equals("Футбол") && boolean_Komanda == false
-						|| s_choice_VudSportu.equals("Баскетбол") && boolean_Komanda == false
-						|| s_choice_VudSportu.equals("Волейбол") && boolean_Komanda == false
-						|| s_choice_VudSportu.equals("Ганбол") && boolean_Komanda == false) {
+				if (s_choice_VudSportu.equals("Футбол") && boolean_ZminaSporty == false
+						|| s_choice_VudSportu.equals("Баскетбол") && boolean_ZminaSporty == false
+						|| s_choice_VudSportu.equals("Волейбол") && boolean_ZminaSporty == false
+						|| s_choice_VudSportu.equals("Ганбол") && boolean_ZminaSporty == false
+						|| s_choice_VudSportu.equals("Хокей") && boolean_ZminaSporty == false) {
+
+					ocustutu();
 
 					l_kartunka.setBounds(0, 0, 0, 0);
 
 					choice_Komanda.setBounds(544, 218, 184, 22);
 					l_Komanda.setBounds(544, 132, 184, 28);
 					l_Komanda1.setBounds(544, 172, 184, 28);
-					boolean_Komanda = true;
+
+				}
+				if (s_choice_VudSportu.equals("Стрільба") && boolean_ZminaSporty == false) {
+
+					ocustutu();
+
+					l_kartunka.setBounds(0, 0, 0, 0);
+
+					choice_VudStrilbu.setBounds(544, 208, 184, 22);
+					l_VudStrilbu.setBounds(544, 122, 184, 28);
+					l_VudStrilbu1.setBounds(544, 162, 184, 28);
+
+					choice_VudZbroi.setBounds(544, 318, 184, 22);
+					l_VudZbroi.setBounds(544, 242, 184, 28);
+					l_VudZbroi1.setBounds(544, 282, 184, 28);
+
+				}
+				if (s_choice_VudSportu.equals("Шахи") && boolean_ZminaSporty == false) {
+
+					ocustutu();
 
 				}
 			}
@@ -186,6 +220,12 @@ public class Oputuvanna extends JFrame {
 		getContentPane().add(l_VudSportu);
 
 		choice_VudSportu = new Choice();
+		choice_VudSportu.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				boolean_ZminaSporty = false;
+			}
+		});
 		choice_VudSportu.setBounds(226, 446, 249, 22);
 		getContentPane().add(choice_VudSportu);
 		choice_VudSportu.add("Теніс");
@@ -196,6 +236,9 @@ public class Oputuvanna extends JFrame {
 		choice_VudSportu.add("Баскетбол");
 		choice_VudSportu.add("Ганбол");
 		choice_VudSportu.add("Хокей");
+
+		choice_VudSportu.add("Стрільба");
+		choice_VudSportu.add("Шахи");
 
 		l_Uminna = new JLabel("Рівень умінь:");
 		l_Uminna.setFont(new Font("Times New Roman", Font.PLAIN, 23));
@@ -224,17 +267,57 @@ public class Oputuvanna extends JFrame {
 				String s_choice_Uminna = choice_Uminna.getSelectedItem();
 				String s_choice_Komanda = choice_Komanda.getSelectedItem();
 
+				String s_choice_VudStrilbu = choice_VudStrilbu.getSelectedItem();
+				String s_choice_VudZbroi = choice_VudZbroi.getSelectedItem();
+
 				if (s_choice_VudSportu.equals("Волейбол") || s_choice_VudSportu.equals("Футбол")
 						|| s_choice_VudSportu.equals("Баскетбол") || s_choice_VudSportu.equals("Ганбол")
-						||  s_choice_VudSportu.equals("Хокей")) {
-					new Oputuvanna1(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,
-							s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna, s_choice_Komanda);
-				} else {
-					new Oputuvanna1(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,
-							s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna);
+						|| s_choice_VudSportu.equals("Хокей")) {
+					new Oputuvanna1(s_choice_Vik, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj, s_choice_Finansu,
+							s_choice_VudSportu, s_choice_Komanda);
+					setVisible(false);
+				}
+				// else {
+				// new Oputuvanna1(s_choice_Vik, s_choice_Stat, s_choice_Vaga,
+				// s_choice_Zrist, s_choice_Zdorovj,
+				// s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna);
+				// }
+
+				choice_Finansu.add("");
+				choice_Finansu.add("Часто задумуюсь про свій бюджет");
+				choice_Finansu.add("Ледве зводжу кінці з кінцями");
+
+				if (s_choice_VudSportu.equals("Стрільба")) {
+					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")
+							|| s_choice_Finansu.equals("Важко відповісти")) {
+
+						int reply = JOptionPane.showConfirmDialog(
+								null, "На жаль, у Вас обмежений фінансовий стан.\n"
+										+ "Бажаєте переглянути схему створення\n" + " лука та стріл в домашніх умовах",
+								"Упс...", JOptionPane.YES_NO_OPTION);
+						if (reply == JOptionPane.YES_OPTION) {
+							try {
+								desktop.browse(new URI(
+										"https://be-be-be.jimdo.com/%D1%8F%D0%BA-%D0%B7%D1%80%D0%BE%D0%B1%D0%B8%D1%82%D0%B8-%D0%BB%D1%83%D0%BA/"));
+							} catch (Exception e1) {
+							}
+						}
+
+					} else {
+						new Oputuvanna1(s_choice_Uminna, s_choice_VudSportu, s_choice_VudStrilbu, s_choice_Uminna,
+								s_choice_VudZbroi);
+						setVisible(false);
+					}
+
 				}
 
-				setVisible(false);
+				if (s_choice_VudSportu.equals("Шахи")) {
+					new Oputuvanna1(s_choice_Finansu, s_choice_VudSportu, s_choice_VudStrilbu, s_choice_Uminna,
+							s_choice_VudZbroi);
+					setVisible(false);
+				}
+
 			}
 		});
 		b_Dali.setBounds(530, 507, 226, 30);
@@ -271,6 +354,43 @@ public class Oputuvanna extends JFrame {
 		choice_Komanda.add("14");
 		choice_Komanda.add("15 і більше");
 
+		l_VudStrilbu = new JLabel("Вкажіть вид");
+		l_VudStrilbu.setHorizontalAlignment(SwingConstants.CENTER);
+		l_VudStrilbu.setFont(new Font("Times New Roman", Font.PLAIN, 23));
+		l_VudStrilbu.setBounds(0, 0, 0, 0);
+		getContentPane().add(l_VudStrilbu);
+
+		l_VudStrilbu1 = new JLabel(" стрільби:");
+		l_VudStrilbu1.setHorizontalAlignment(SwingConstants.CENTER);
+		l_VudStrilbu1.setFont(new Font("Times New Roman", Font.PLAIN, 23));
+		l_VudStrilbu1.setBounds(0, 0, 0, 0);
+		getContentPane().add(l_VudStrilbu1);
+
+		choice_VudStrilbu = new Choice();
+		choice_VudStrilbu.setBounds(0, -50, 0, 0);
+		getContentPane().add(choice_VudStrilbu);
+		choice_VudStrilbu.add("Кульова");
+		choice_VudStrilbu.add("Стендова");
+
+		l_VudZbroi = new JLabel("Вкажіть вид");
+		l_VudZbroi.setHorizontalAlignment(SwingConstants.CENTER);
+		l_VudZbroi.setFont(new Font("Times New Roman", Font.PLAIN, 23));
+		l_VudZbroi.setBounds(0, 0, 0, 0);
+		getContentPane().add(l_VudZbroi);
+
+		l_VudZbroi1 = new JLabel(" зброї:");
+		l_VudZbroi1.setHorizontalAlignment(SwingConstants.CENTER);
+		l_VudZbroi1.setFont(new Font("Times New Roman", Font.PLAIN, 23));
+		l_VudZbroi1.setBounds(0, 0, 0, 0);
+		getContentPane().add(l_VudZbroi1);
+
+		choice_VudZbroi = new Choice();
+		choice_VudZbroi.setBounds(0, -50, 0, 0);
+		getContentPane().add(choice_VudZbroi);
+		choice_VudZbroi.add("Гвинтівка");
+		choice_VudZbroi.add("Пістолет");
+		choice_VudZbroi.add("Лук");
+
 		l_kartunka = new JLabel("");
 		l_kartunka.setHorizontalAlignment(SwingConstants.CENTER);
 		l_kartunka.setIcon(new ImageIcon("res/kartunka_Zaput1.png"));
@@ -284,4 +404,21 @@ public class Oputuvanna extends JFrame {
 
 		setVisible(true);
 	}
+
+	void ocustutu() {
+		choice_Komanda.setBounds(0, 0, 0, 0);
+		l_Komanda.setBounds(0, 0, 0, 0);
+		l_Komanda1.setBounds(0, 0, 0, 0);
+		choice_VudStrilbu.setBounds(0, 0, 0, 0);
+		l_VudStrilbu.setBounds(0, 0, 0, 0);
+		l_VudStrilbu1.setBounds(0, 0, 0, 0);
+		choice_VudZbroi.setBounds(0, 0, 0, 0);
+		l_VudZbroi.setBounds(0, 0, 0, 0);
+		l_VudZbroi1.setBounds(0, 0, 0, 0);
+
+		l_kartunka.setBounds(510, 66, 260, 428);
+
+		boolean_ZminaSporty = true;
+	}
+
 }

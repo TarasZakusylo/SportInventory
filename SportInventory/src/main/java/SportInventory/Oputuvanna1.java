@@ -38,6 +38,8 @@ public class Oputuvanna1 extends JFrame {
 
 	int i_Navantagenna = 0;
 
+	private JLabel l_komentar;
+
 	public Oputuvanna1(String Finansu, String s_choice_Stat, String s_choice_Vaga, String s_choice_Zrist,
 			String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna) {
 
@@ -53,15 +55,22 @@ public class Oputuvanna1 extends JFrame {
 		l_Hapka.setBounds(12, 13, 770, 54);
 		getContentPane().add(l_Hapka);
 
+		JButton b_Nazad = new JButton("");
+		b_Nazad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Oputuvanna();
+				setVisible(false);
+			}
+		});
+		b_Nazad.setIcon(new ImageIcon("res/Nazad.png"));
+		b_Nazad.setBounds(0, 0, 46, 41);
+		getContentPane().add(b_Nazad);
+
 		setVisible(true);
 	}
 
-	/**
-	 * @wbp.parser.constructor
-	 */
-	public Oputuvanna1(String s_choice_Vik, String s_choice_Stat, String s_choice_Vaga, String s_choice_Zrist,
-			String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna,
-			String s_choice_Komanda) {
+	public Oputuvanna1(String s_choice_Vik, String s_choice_Vaga, String s_choice_Zrist, String s_choice_Zdorovj,
+			String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Komanda) {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(800, 600);
@@ -76,7 +85,7 @@ public class Oputuvanna1 extends JFrame {
 		getContentPane().add(l_Hapka);
 
 		if (s_choice_Komanda.equals("15 і більше")) {
-			s_choice_Uminna = "16";
+			s_choice_Komanda = "16";
 		}
 
 		i_Komanda = Integer.parseInt(s_choice_Komanda);
@@ -244,12 +253,13 @@ public class Oputuvanna1 extends JFrame {
 			if (s_choice_VudSportu.equals("Хокей")) {
 				s_rekomendacia = "res" + "/" + "Хокей" + "/" + "MinFinansu.png";
 				if (i_Komanda >= 4) {
-					l_rokomand_zagalno = new JLabel("рекомендується власноруч зробити ворота (із 3 паль)");
+					l_rokomand_zagalno = new JLabel(
+							"рекомендується власноруч зробити майданчик на річці чи ставку (будьте обережні)");
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
 			}
-			
+
 			boo_Ekipirivka = false;
 
 		}
@@ -299,6 +309,17 @@ public class Oputuvanna1 extends JFrame {
 		}
 
 		l_rekomandacia.setIcon(new ImageIcon(image_vuvestuProfil));
+
+		JButton b_Nazad = new JButton("");
+		b_Nazad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Oputuvanna();
+				setVisible(false);
+			}
+		});
+		b_Nazad.setIcon(new ImageIcon("res/Nazad.png"));
+		b_Nazad.setBounds(0, 0, 46, 41);
+		getContentPane().add(b_Nazad);
 
 		if (s_choice_Vik.equals("до 18")) {
 			JButton b_Hkola = new JButton("Спортивні школи");
@@ -465,9 +486,10 @@ public class Oputuvanna1 extends JFrame {
 
 		if (s_choice_VudSportu.equals("Хокей")) {
 			if (i_Navantagenna != 10) {
-				JOptionPane.showMessageDialog(null, "Вам НЕ рекомендовано займатись видом спорту: " + s_choice_VudSportu
-						+ ".\nЗверніть увагу на своє здоров'я.\n" + "Бережіть себе !", "Увага",
-						JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null,
+						"Вам НЕ рекомендовано займатись видом спорту: " + s_choice_VudSportu
+								+ ".\nЗверніть увагу на своє здоров'я.\n" + "Бережіть себе !",
+						"Увага", JOptionPane.ERROR_MESSAGE);
 			}
 		} else {
 
@@ -486,4 +508,70 @@ public class Oputuvanna1 extends JFrame {
 		}
 	}
 
+	/**
+	 * @wbp.parser.constructor
+	 */
+	public Oputuvanna1(String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna,
+			String s_choice_VudStrilbu, String s_choice_VudZbroi) {
+
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(800, 600);
+		setResizable(false);
+		setLocationRelativeTo(null);
+		getContentPane().setLayout(null);
+
+		JLabel l_Hapka = new JLabel("Вам рекомендується придбати:");
+		l_Hapka.setFont(new Font("Monotype Corsiva", Font.BOLD, 50));
+		l_Hapka.setHorizontalAlignment(SwingConstants.CENTER);
+		l_Hapka.setBounds(12, 13, 770, 54);
+		getContentPane().add(l_Hapka);
+
+		JButton b_Nazad = new JButton("");
+		b_Nazad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Oputuvanna();
+				setVisible(false);
+			}
+		});
+		b_Nazad.setIcon(new ImageIcon("res/Nazad.png"));
+		b_Nazad.setBounds(0, 0, 46, 41);
+		getContentPane().add(b_Nazad);
+
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 116, 794, 449);
+		getContentPane().add(scrollPane);
+
+		JLabel l_recomendacia = new JLabel("");
+		scrollPane.setViewportView(l_recomendacia);
+
+		if (s_choice_VudSportu.equals("Шахи")) {
+
+			l_komentar = new JLabel("Даний вид спорту досить невибагливий відносто інвентаря");
+
+			if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+					|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+				s_rekomendacia = "res" + "/" + "Шахи" + "/" + "MinFinansu.png";
+			} else {
+				s_rekomendacia = "res" + "/" + "Шахи" + "/" + "MaxFinansu.png";
+			}
+		} else {
+
+			l_komentar = new JLabel("Даний вид спорту досить вибагливий та коштовний");
+
+		}
+
+		File file_vuvestuProfil = new File(s_rekomendacia);
+		try {
+			image_vuvestuProfil = ImageIO.read(file_vuvestuProfil);
+			l_recomendacia.setIcon(new ImageIcon(image_vuvestuProfil));
+		} catch (Exception e1) {
+		}
+
+		l_komentar.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		l_komentar.setHorizontalAlignment(SwingConstants.CENTER);
+		l_komentar.setBounds(22, 79, 760, 25);
+		getContentPane().add(l_komentar);
+
+		setVisible(true);
+	}
 }
