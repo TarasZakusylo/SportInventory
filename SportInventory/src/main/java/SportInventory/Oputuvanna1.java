@@ -4,9 +4,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
+
+import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.net.URI;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -39,6 +42,8 @@ public class Oputuvanna1 extends JFrame {
 	int i_Navantagenna = 0;
 
 	private JLabel l_komentar;
+
+	Desktop desktop = Desktop.getDesktop();
 
 	public Oputuvanna1(String Finansu, String s_choice_Stat, String s_choice_Vaga, String s_choice_Zrist,
 			String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna) {
@@ -558,6 +563,53 @@ public class Oputuvanna1 extends JFrame {
 
 			l_komentar = new JLabel("Даний вид спорту досить вибагливий та коштовний");
 
+			if (s_choice_Uminna.equals("Профі")) {
+				if (s_choice_VudZbroi.equals("Гвинтівка")) {
+
+				}
+				if (s_choice_VudZbroi.equals("Пістолет")) {
+
+				}
+				if (s_choice_VudZbroi.equals("Лук")) {
+					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Лук" + "/" + "MaxUminna.png";
+				}
+			}
+			if (s_choice_Uminna.equals("Любитель")) {
+				if (s_choice_VudZbroi.equals("Гвинтівка")) {
+
+				}
+				if (s_choice_VudZbroi.equals("Пістолет")) {
+
+				}
+				if (s_choice_VudZbroi.equals("Лук")) {
+					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Лук" + "/" + "NormUminna.png";
+				}
+			}
+			if (s_choice_Uminna.equals("Нище середнього") || s_choice_Uminna.equals("Я навчаюсь")) {
+				if (s_choice_VudZbroi.equals("Гвинтівка")) {
+
+				}
+				if (s_choice_VudZbroi.equals("Пістолет")) {
+
+				}
+				if (s_choice_VudZbroi.equals("Лук")) {
+					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Лук" + "/" + "MinUminna.png";
+				}
+			}
+
+			if (s_choice_VudStrilbu.equals("Стендова")) {
+
+				int reply = JOptionPane.showConfirmDialog(null,
+						"Ви обрали стендову стрільбу.\n"
+								+ "Бажаєте переглянути де можна\nзнайти машину для запуску мішеней\n",
+						"Упс...", JOptionPane.YES_NO_OPTION);
+				if (reply == JOptionPane.YES_OPTION) {
+					try {
+						desktop.browse(new URI("https://ibis.net.ua/products/ustrojstva-dlja-metanija-tarelok/"));
+					} catch (Exception e1) {
+					}
+				}
+			}
 		}
 
 		File file_vuvestuProfil = new File(s_rekomendacia);
