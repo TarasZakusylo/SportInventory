@@ -111,7 +111,7 @@ public class Oputuvanna1 extends JFrame {
 
 		if (s_choice_Finansu.equals("Для мене гроші - не проблема")
 				|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
-			l_min_finansu = new JLabel("Ваш б'юджет це повна свобота,");
+			l_min_finansu = new JLabel("Ваш бюджет це повна свобота,");
 			if (s_choice_Vik.equals("до 18")) {
 				s_Hkola_Klub = "cпорт школи";
 			} else {
@@ -167,7 +167,7 @@ public class Oputuvanna1 extends JFrame {
 			boo_Ekipirivka = true;
 		}
 		if (s_choice_Finansu.equals("Важко відповісти")) {
-			l_min_finansu = new JLabel("Ваш б'юджет досить вільний,");
+			l_min_finansu = new JLabel("Ваш бюджет досить вільний,");
 			if (s_choice_Vik.equals("до 18")) {
 				s_Hkola_Klub = "cпорт школи";
 			} else {
@@ -225,7 +225,7 @@ public class Oputuvanna1 extends JFrame {
 		if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 				|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
 
-			l_min_finansu = new JLabel("На жаль, Ваш б'юджет обмежений,");
+			l_min_finansu = new JLabel("На жаль, Ваш бюджет обмежений,");
 
 			if (s_choice_VudSportu.equals("Волейбол")) {
 				s_rekomendacia = "res" + "/" + "Volleyball" + "/" + "MinFinansu.png";
@@ -295,7 +295,7 @@ public class Oputuvanna1 extends JFrame {
 		b_ekipirivka.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (boo_Ekipirivka == false) {
-					JOptionPane.showMessageDialog(null, "На жаль, Ваш б'юджет не дозволяє Вам купувати екіпіровку.",
+					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
 							"Увага", JOptionPane.WARNING_MESSAGE);
 				}
 			}

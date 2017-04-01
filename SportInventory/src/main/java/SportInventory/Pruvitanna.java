@@ -23,7 +23,7 @@ public class Pruvitanna extends JFrame{
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Рекомендації");
+		JLabel lblNewLabel = new JLabel("Рекомендації для вибору");
 		lblNewLabel.setForeground(Color.ORANGE);
 		lblNewLabel.setFont(new Font("Monotype Corsiva", Font.BOLD, 50));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
