@@ -575,10 +575,10 @@ public class Oputuvanna1 extends JFrame {
 
 			if (s_choice_Uminna.equals("Профі")) {
 				if (s_choice_VudZbroi.equals("Гвинтівка")) {
-
+					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Гвинтівка" + "/" + "MaxUminna.png";
 				}
 				if (s_choice_VudZbroi.equals("Пістолет")) {
-
+					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Пістолет" + "/" + "MaxUminna.png";
 				}
 				if (s_choice_VudZbroi.equals("Лук")) {
 					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Лук" + "/" + "MaxUminna.png";
@@ -586,10 +586,10 @@ public class Oputuvanna1 extends JFrame {
 			}
 			if (s_choice_Uminna.equals("Любитель")) {
 				if (s_choice_VudZbroi.equals("Гвинтівка")) {
-
+					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Гвинтівка" + "/" + "NormUminna.png";
 				}
 				if (s_choice_VudZbroi.equals("Пістолет")) {
-
+					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Пістолет" + "/" + "NormUminna.png";
 				}
 				if (s_choice_VudZbroi.equals("Лук")) {
 					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Лук" + "/" + "NormUminna.png";
@@ -597,10 +597,10 @@ public class Oputuvanna1 extends JFrame {
 			}
 			if (s_choice_Uminna.equals("Нище середнього") || s_choice_Uminna.equals("Я навчаюсь")) {
 				if (s_choice_VudZbroi.equals("Гвинтівка")) {
-
+					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Гвинтівка" + "/" + "MinUminna.png";
 				}
 				if (s_choice_VudZbroi.equals("Пістолет")) {
-
+					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Пістолет" + "/" + "MinUminna.png";
 				}
 				if (s_choice_VudZbroi.equals("Лук")) {
 					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Лук" + "/" + "MinUminna.png";
