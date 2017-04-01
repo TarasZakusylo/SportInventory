@@ -17,6 +17,8 @@ import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Oputuvanna1 extends JFrame {
 
@@ -44,6 +46,8 @@ public class Oputuvanna1 extends JFrame {
 	private JLabel l_komentar;
 
 	Desktop desktop = Desktop.getDesktop();
+
+	private boolean boolean_StendovaStrilba = false;
 
 	public Oputuvanna1(String Finansu, String s_choice_Stat, String s_choice_Vaga, String s_choice_Zrist,
 			String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna) {
@@ -517,7 +521,7 @@ public class Oputuvanna1 extends JFrame {
 	 * @wbp.parser.constructor
 	 */
 	public Oputuvanna1(String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna,
-			String s_choice_VudStrilbu, String s_choice_VudZbroi) {
+			 final String s_choice_VudStrilbu, String s_choice_VudZbroi) {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(800, 600);
@@ -547,6 +551,12 @@ public class Oputuvanna1 extends JFrame {
 		getContentPane().add(scrollPane);
 
 		JLabel l_recomendacia = new JLabel("");
+		l_recomendacia.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				stendova(s_choice_VudStrilbu);
+			}
+		});
 		scrollPane.setViewportView(l_recomendacia);
 
 		if (s_choice_VudSportu.equals("Шахи")) {
@@ -597,19 +607,12 @@ public class Oputuvanna1 extends JFrame {
 				}
 			}
 
-			if (s_choice_VudStrilbu.equals("Стендова")) {
-
-				int reply = JOptionPane.showConfirmDialog(null,
-						"Ви обрали стендову стрільбу.\n"
-								+ "Бажаєте переглянути де можна\nзнайти машину для запуску мішеней\n",
-						"Упс...", JOptionPane.YES_NO_OPTION);
-				if (reply == JOptionPane.YES_OPTION) {
-					try {
-						desktop.browse(new URI("https://ibis.net.ua/products/ustrojstva-dlja-metanija-tarelok/"));
-					} catch (Exception e1) {
-					}
+			getContentPane().addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseEntered(MouseEvent arg0) {
+					stendova(s_choice_VudStrilbu);
 				}
-			}
+			});
 		}
 
 		File file_vuvestuProfil = new File(s_rekomendacia);
@@ -626,4 +629,23 @@ public class Oputuvanna1 extends JFrame {
 
 		setVisible(true);
 	}
+
+	void stendova(String s_choice_VudStrilbu) {
+		if (s_choice_VudStrilbu.equals("Стендова") && boolean_StendovaStrilba == false) {
+
+			int reply = JOptionPane.showConfirmDialog(null,
+					"Ви обрали стендову стрільбу.\n"
+							+ "Бажаєте переглянути де можна\nзнайти машину для запуску мішеней\n",
+					"Упс...", JOptionPane.YES_NO_OPTION);
+			if (reply == JOptionPane.YES_OPTION) {
+				try {
+					desktop.browse(new URI("https://ibis.net.ua/products/ustrojstva-dlja-metanija-tarelok/"));
+				} catch (Exception e1) {
+				}
+			}
+
+			boolean_StendovaStrilba = true;
+		}
+	}
+
 }
