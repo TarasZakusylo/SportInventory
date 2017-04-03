@@ -306,7 +306,7 @@ public class Oputuvanna extends JFrame {
 
 					} else {
 						new Oputuvanna1(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
-								s_choice_VudStrilbu, s_choice_VudZbroi);
+								s_choice_VudStrilbu, s_choice_VudZbroi , s_choice_Vik);
 						setVisible(false);
 					}
 
@@ -314,7 +314,7 @@ public class Oputuvanna extends JFrame {
 
 				if (s_choice_VudSportu.equals("Шахи")) {
 					new Oputuvanna1( s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
-							s_choice_VudStrilbu, s_choice_VudZbroi);
+							s_choice_VudStrilbu, s_choice_VudZbroi , s_choice_Vik);
 					setVisible(false);
 				}
 

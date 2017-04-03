@@ -44,6 +44,7 @@ public class Oputuvanna1 extends JFrame {
 	int i_Navantagenna = 0;
 
 	private JLabel l_komentar;
+	private JLabel l_komentar1;
 
 	Desktop desktop = Desktop.getDesktop();
 
@@ -520,8 +521,8 @@ public class Oputuvanna1 extends JFrame {
 	/**
 	 * @wbp.parser.constructor
 	 */
-	public Oputuvanna1(String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna,
-			 final String s_choice_VudStrilbu, String s_choice_VudZbroi) {
+	public Oputuvanna1(final String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna,
+			 final String s_choice_VudStrilbu, String s_choice_VudZbroi , String s_choice_Vik) {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(800, 600);
@@ -547,7 +548,7 @@ public class Oputuvanna1 extends JFrame {
 		getContentPane().add(b_Nazad);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 116, 794, 449);
+		scrollPane.setBounds(0, 116, 794, 409);
 		getContentPane().add(scrollPane);
 
 		JLabel l_recomendacia = new JLabel("");
@@ -562,7 +563,11 @@ public class Oputuvanna1 extends JFrame {
 		if (s_choice_VudSportu.equals("Шахи")) {
 
 			l_komentar = new JLabel("Даний вид спорту досить невибагливий відносто інвентаря");
-
+			l_komentar.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			l_komentar.setHorizontalAlignment(SwingConstants.CENTER);
+			l_komentar.setBounds(0, 74, 794, 25);
+			getContentPane().add(l_komentar);
+			
 			if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 					|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
 				s_rekomendacia = "res" + "/" + "Шахи" + "/" + "MinFinansu.png";
@@ -571,8 +576,19 @@ public class Oputuvanna1 extends JFrame {
 			}
 		} else {
 
-			l_komentar = new JLabel("Даний вид спорту досить вибагливий та коштовний");
-
+			l_komentar = new JLabel("Даний вид спорту досить вибагливий та коштовний.");
+			l_komentar1 = new JLabel("Також Вам необхідний тир чи полігон.");
+			
+			l_komentar.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			l_komentar.setHorizontalAlignment(SwingConstants.CENTER);
+			l_komentar.setBounds(0, 64, 794, 25);
+			getContentPane().add(l_komentar);
+			
+			l_komentar1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			l_komentar1.setHorizontalAlignment(SwingConstants.CENTER);
+			l_komentar1.setBounds(0, 91, 794, 25);
+			getContentPane().add(l_komentar1);
+			
 			if (s_choice_Uminna.equals("Профі")) {
 				if (s_choice_VudZbroi.equals("Гвинтівка")) {
 					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Гвинтівка" + "/" + "MaxUminna.png";
@@ -621,12 +637,39 @@ public class Oputuvanna1 extends JFrame {
 			l_recomendacia.setIcon(new ImageIcon(image_vuvestuProfil));
 		} catch (Exception e1) {
 		}
+		
+		JButton b_kuputu = new JButton("Перейти до купівлі");
+		b_kuputu.setBounds(0, 524, 200, 41);
+		getContentPane().add(b_kuputu);
 
-		l_komentar.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		l_komentar.setHorizontalAlignment(SwingConstants.CENTER);
-		l_komentar.setBounds(22, 79, 760, 25);
-		getContentPane().add(l_komentar);
+		JButton b_misce = new JButton("Місця для занять");
+		b_misce.setBounds(397, 524, 200, 41);
+		getContentPane().add(b_misce);
+ 		
+		JButton b_ekipirivka = new JButton("Екіпіровка"); 
+		b_ekipirivka.setBounds(199, 524, 200, 41);
+		getContentPane().add(b_ekipirivka);
 
+		if (s_choice_Vik.equals("до 18")) {
+			JButton b_Hkola = new JButton("Спортивні школи");
+			b_Hkola.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+
+				}
+			});
+			b_Hkola.setBounds(594, 524, 200, 41);
+			getContentPane().add(b_Hkola);
+		} else {
+			JButton b_Klub = new JButton("Ігрові клуби");
+			b_Klub.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+
+				}
+			});
+			b_Klub.setBounds(594, 524, 200, 41);
+			getContentPane().add(b_Klub);
+		}
+		
 		setVisible(true);
 	}
 
@@ -647,5 +690,4 @@ public class Oputuvanna1 extends JFrame {
 			boolean_StendovaStrilba = true;
 		}
 	}
-
 }
