@@ -303,8 +303,9 @@ public class Oputuvanna extends JFrame {
 				if (s_choice_VudSportu.equals("Волейбол") || s_choice_VudSportu.equals("Футбол")
 						|| s_choice_VudSportu.equals("Баскетбол") || s_choice_VudSportu.equals("Ганбол")
 						|| s_choice_VudSportu.equals("Хокей")) {
-					new Oputuvanna1(s_choice_Vik, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj, s_choice_Finansu,
-							s_choice_VudSportu, s_choice_Komanda);
+					Oputuvanna1 oputuvanna1 = new Oputuvanna1();
+					oputuvanna1.OputuvannaKomanda(s_choice_Vik, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,
+							s_choice_Finansu, s_choice_VudSportu, s_choice_Komanda);
 					setVisible(false);
 				}
 
@@ -324,28 +325,26 @@ public class Oputuvanna extends JFrame {
 							} catch (Exception e1) {
 							}
 						}
-
 					} else {
-						new Oputuvanna1(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna, s_choice_VudStrilbu,
-								s_choice_VudZbroi, s_choice_Vik);
+						Oputuvanna1 Oputuvanna1 = new Oputuvanna1();
+						Oputuvanna1.OputuvannaNoZdorovja(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
+								s_choice_VudStrilbu, s_choice_VudZbroi, s_choice_Vik);
 						setVisible(false);
 					}
-
 				}
-
 				if (s_choice_VudSportu.equals("Шахи")) {
-					new Oputuvanna1(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna, s_choice_VudStrilbu,
-							s_choice_VudZbroi, s_choice_Vik);
+					Oputuvanna1 Oputuvanna1 = new Oputuvanna1();
+					Oputuvanna1.OputuvannaNoZdorovja(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
+							s_choice_VudStrilbu, s_choice_VudZbroi, s_choice_Vik);
 					setVisible(false);
 				}
-
 				if (s_choice_VudSportu.equals("Бойові мистецтва") || s_choice_VudSportu.equals("Важка атлетика")
 						|| s_choice_VudSportu.equals("Веслування") || s_choice_VudSportu.equals("Альпінізм")) {
-					new Oputuvanna1(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,
-							s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna);
+					Oputuvanna1 oputuvannaZdorovja = new Oputuvanna1();
+					oputuvannaZdorovja.OputuvannaZdorovja(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist,
+							s_choice_Zdorovj, s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna);
 					setVisible(false);
 				}
-
 			}
 		});
 		b_Dali.setBounds(530, 507, 226, 30);

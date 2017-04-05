@@ -50,50 +50,11 @@ public class Oputuvanna1 extends JFrame {
 
 	private boolean boolean_StendovaStrilba = false;
 
-	public Oputuvanna1(String Finansu, String s_choice_Stat, String s_choice_Vaga, String s_choice_Zrist,
-			String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna) {
-
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(800, 600);
-		setResizable(false);
-		setLocationRelativeTo(null);
-		getContentPane().setLayout(null);
-
-		JLabel l_Hapka = new JLabel("Вам рекомендується придбати:");
-		l_Hapka.setFont(new Font("Monotype Corsiva", Font.BOLD, 50));
-		l_Hapka.setHorizontalAlignment(SwingConstants.CENTER);
-		l_Hapka.setBounds(12, 13, 770, 54);
-		getContentPane().add(l_Hapka);
-
-		JButton b_Nazad = new JButton("");
-		b_Nazad.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				new Oputuvanna();
-				setVisible(false);
-			}
-		});
-		b_Nazad.setIcon(new ImageIcon("res/Nazad.png"));
-		b_Nazad.setBounds(0, 0, 46, 41);
-		getContentPane().add(b_Nazad);
-
-		setVisible(true);
-	}
-
-	public Oputuvanna1(String s_choice_Vik, String s_choice_Vaga, String s_choice_Zrist, String s_choice_Zdorovj,
-			String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Komanda) {
-
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(800, 600);
-		setResizable(false);
-		setLocationRelativeTo(null);
-		getContentPane().setLayout(null);
-
-		JLabel l_Hapka = new JLabel("Вам рекомендується придбати:");
-		l_Hapka.setFont(new Font("Monotype Corsiva", Font.BOLD, 50));
-		l_Hapka.setHorizontalAlignment(SwingConstants.CENTER);
-		l_Hapka.setBounds(12, 13, 770, 54);
-		getContentPane().add(l_Hapka);
-
+	public void OputuvannaKomanda(String s_choice_Vik, String s_choice_Vaga, String s_choice_Zrist,
+			String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Komanda) {
+		
+		hapka();
+		
 		if (s_choice_Komanda.equals("15 і більше")) {
 			s_choice_Komanda = "16";
 		}
@@ -320,17 +281,6 @@ public class Oputuvanna1 extends JFrame {
 
 		l_rekomandacia.setIcon(new ImageIcon(image_vuvestuProfil));
 
-		JButton b_Nazad = new JButton("");
-		b_Nazad.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				new Oputuvanna();
-				setVisible(false);
-			}
-		});
-		b_Nazad.setIcon(new ImageIcon("res/Nazad.png"));
-		b_Nazad.setBounds(0, 0, 46, 41);
-		getContentPane().add(b_Nazad);
-
 		if (s_choice_Vik.equals("до 18")) {
 			JButton b_Hkola = new JButton("Спортивні школи");
 			b_Hkola.addActionListener(new ActionListener() {
@@ -518,35 +468,11 @@ public class Oputuvanna1 extends JFrame {
 		}
 	}
 
-	/**
-	 * @wbp.parser.constructor
-	 */
-	public Oputuvanna1(final String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna,
-			 final String s_choice_VudStrilbu, String s_choice_VudZbroi , String s_choice_Vik) {
+	public void OputuvannaNoZdorovja(final String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna,
+			final String s_choice_VudStrilbu, String s_choice_VudZbroi, String s_choice_Vik) {
 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(800, 600);
-		setResizable(false);
-		setLocationRelativeTo(null);
-		getContentPane().setLayout(null);
-
-		JLabel l_Hapka = new JLabel("Вам рекомендується придбати:");
-		l_Hapka.setFont(new Font("Monotype Corsiva", Font.BOLD, 50));
-		l_Hapka.setHorizontalAlignment(SwingConstants.CENTER);
-		l_Hapka.setBounds(12, 13, 770, 54);
-		getContentPane().add(l_Hapka);
-
-		JButton b_Nazad = new JButton("");
-		b_Nazad.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				new Oputuvanna();
-				setVisible(false);
-			}
-		});
-		b_Nazad.setIcon(new ImageIcon("res/Nazad.png"));
-		b_Nazad.setBounds(0, 0, 46, 41);
-		getContentPane().add(b_Nazad);
-
+		hapka();
+		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(0, 116, 794, 409);
 		getContentPane().add(scrollPane);
@@ -567,7 +493,7 @@ public class Oputuvanna1 extends JFrame {
 			l_komentar.setHorizontalAlignment(SwingConstants.CENTER);
 			l_komentar.setBounds(0, 74, 794, 25);
 			getContentPane().add(l_komentar);
-			
+
 			if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 					|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
 				s_rekomendacia = "res" + "/" + "Шахи" + "/" + "MinFinansu.png";
@@ -578,17 +504,17 @@ public class Oputuvanna1 extends JFrame {
 
 			l_komentar = new JLabel("Даний вид спорту досить вибагливий та коштовний.");
 			l_komentar1 = new JLabel("Також Вам необхідний тир чи полігон.");
-			
+
 			l_komentar.setFont(new Font("Times New Roman", Font.BOLD, 20));
 			l_komentar.setHorizontalAlignment(SwingConstants.CENTER);
 			l_komentar.setBounds(0, 64, 794, 25);
 			getContentPane().add(l_komentar);
-			
+
 			l_komentar1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 			l_komentar1.setHorizontalAlignment(SwingConstants.CENTER);
 			l_komentar1.setBounds(0, 91, 794, 25);
 			getContentPane().add(l_komentar1);
-			
+
 			if (s_choice_Uminna.equals("Профі")) {
 				if (s_choice_VudZbroi.equals("Гвинтівка")) {
 					s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Гвинтівка" + "/" + "MaxUminna.png";
@@ -637,7 +563,7 @@ public class Oputuvanna1 extends JFrame {
 			l_recomendacia.setIcon(new ImageIcon(image_vuvestuProfil));
 		} catch (Exception e1) {
 		}
-		
+
 		JButton b_kuputu = new JButton("Перейти до купівлі");
 		b_kuputu.setBounds(0, 524, 200, 41);
 		getContentPane().add(b_kuputu);
@@ -645,8 +571,8 @@ public class Oputuvanna1 extends JFrame {
 		JButton b_misce = new JButton("Місця для занять");
 		b_misce.setBounds(397, 524, 200, 41);
 		getContentPane().add(b_misce);
- 		
-		JButton b_ekipirivka = new JButton("Екіпіровка"); 
+
+		JButton b_ekipirivka = new JButton("Екіпіровка");
 		b_ekipirivka.setBounds(199, 524, 200, 41);
 		getContentPane().add(b_ekipirivka);
 
@@ -669,7 +595,7 @@ public class Oputuvanna1 extends JFrame {
 			b_Klub.setBounds(594, 524, 200, 41);
 			getContentPane().add(b_Klub);
 		}
-		
+
 		setVisible(true);
 	}
 
@@ -689,5 +615,39 @@ public class Oputuvanna1 extends JFrame {
 
 			boolean_StendovaStrilba = true;
 		}
+	}
+
+	public void OputuvannaZdorovja(String s_choice_Vik, String s_choice_Stat, String s_choice_Vaga,
+			String s_choice_Zrist, String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu,
+			String s_choice_Uminna) {
+
+		hapka();
+
+		setVisible(true);
+	}
+
+	public void hapka() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(800, 600);
+		setResizable(false);
+		setLocationRelativeTo(null);
+		getContentPane().setLayout(null);
+
+		JLabel l_Hapka = new JLabel("Вам рекомендується придбати:");
+		l_Hapka.setFont(new Font("Monotype Corsiva", Font.BOLD, 50));
+		l_Hapka.setHorizontalAlignment(SwingConstants.CENTER);
+		l_Hapka.setBounds(12, 13, 770, 54);
+		getContentPane().add(l_Hapka);
+
+		JButton b_Nazad = new JButton("");
+		b_Nazad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Oputuvanna();
+				setVisible(false);
+			}
+		});
+		b_Nazad.setIcon(new ImageIcon("res/Nazad.png"));
+		b_Nazad.setBounds(0, 0, 46, 41);
+		getContentPane().add(b_Nazad);
 	}
 }
