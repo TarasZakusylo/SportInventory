@@ -50,11 +50,11 @@ public class Oputuvanna1 extends JFrame {
 
 	private boolean boolean_StendovaStrilba = false;
 
+	private JScrollPane scrollPane_Recomandacia;
+
 	public void OputuvannaKomanda(String s_choice_Vik, String s_choice_Vaga, String s_choice_Zrist,
 			String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Komanda) {
-		
-		hapka();
-		
+
 		if (s_choice_Komanda.equals("15 і більше")) {
 			s_choice_Komanda = "16";
 		}
@@ -245,61 +245,11 @@ public class Oputuvanna1 extends JFrame {
 		l_min_finansu.setBounds(12, 80, 770, 34);
 		getContentPane().add(l_min_finansu);
 
-		JButton b_kuputu = new JButton("Перейти до купівлі");
-		b_kuputu.setBounds(0, 524, 200, 41);
-		getContentPane().add(b_kuputu);
+		scrollPane_Recomandacia = new JScrollPane();
+		scrollPane_Recomandacia.setBounds(0, 213, 794, 312);
+		getContentPane().add(scrollPane_Recomandacia);
 
-		JButton b_misce = new JButton("Місця для занять");
-		b_misce.setBounds(397, 524, 200, 41);
-		getContentPane().add(b_misce);
-
-		JButton b_ekipirivka = new JButton("Екіпіровка");
-		b_ekipirivka.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if (boo_Ekipirivka == false) {
-					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
-							"Увага", JOptionPane.WARNING_MESSAGE);
-				}
-			}
-		});
-		b_ekipirivka.setBounds(199, 524, 200, 41);
-		getContentPane().add(b_ekipirivka);
-
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 213, 794, 312);
-		getContentPane().add(scrollPane);
-
-		JLabel l_rekomandacia = new JLabel();
-		scrollPane.setViewportView(l_rekomandacia);
-
-		File file_vuvestuProfil = new File(s_rekomendacia);
-
-		try {
-			image_vuvestuProfil = ImageIO.read(file_vuvestuProfil);
-		} catch (Exception e1) {
-		}
-
-		l_rekomandacia.setIcon(new ImageIcon(image_vuvestuProfil));
-
-		if (s_choice_Vik.equals("до 18")) {
-			JButton b_Hkola = new JButton("Спортивні школи");
-			b_Hkola.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-
-				}
-			});
-			b_Hkola.setBounds(594, 524, 200, 41);
-			getContentPane().add(b_Hkola);
-		} else {
-			JButton b_Klub = new JButton("Ігрові клуби");
-			b_Klub.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-
-				}
-			});
-			b_Klub.setBounds(594, 524, 200, 41);
-			getContentPane().add(b_Klub);
-		}
+		hapka(s_choice_Vik);
 
 		setVisible(true);
 	}
@@ -441,10 +391,9 @@ public class Oputuvanna1 extends JFrame {
 			i_Navantagenna = i_Navantagenna - 5;
 		}
 
-		System.out.println(i_Vaga / (d_Zrist * d_Zrist));
-		System.out.println(i_Navantagenna);
-
-		if (s_choice_VudSportu.equals("Хокей")) {
+		if (s_choice_VudSportu.equals("Хокей") || s_choice_VudSportu.equals("Бойові мистецтва")
+				|| s_choice_VudSportu.equals("Важка атлетика") || s_choice_VudSportu.equals("Веслування")
+				|| s_choice_VudSportu.equals("Альпінізм")) {
 			if (i_Navantagenna != 10) {
 				JOptionPane.showMessageDialog(null,
 						"Вам НЕ рекомендовано займатись видом спорту: " + s_choice_VudSportu
@@ -471,11 +420,9 @@ public class Oputuvanna1 extends JFrame {
 	public void OputuvannaNoZdorovja(final String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna,
 			final String s_choice_VudStrilbu, String s_choice_VudZbroi, String s_choice_Vik) {
 
-		hapka();
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 116, 794, 409);
-		getContentPane().add(scrollPane);
+		scrollPane_Recomandacia = new JScrollPane();
+		scrollPane_Recomandacia.setBounds(0, 116, 794, 409);
+		getContentPane().add(scrollPane_Recomandacia);
 
 		JLabel l_recomendacia = new JLabel("");
 		l_recomendacia.addMouseListener(new MouseAdapter() {
@@ -484,7 +431,7 @@ public class Oputuvanna1 extends JFrame {
 				stendova(s_choice_VudStrilbu);
 			}
 		});
-		scrollPane.setViewportView(l_recomendacia);
+		scrollPane_Recomandacia.setViewportView(l_recomendacia);
 
 		if (s_choice_VudSportu.equals("Шахи")) {
 
@@ -557,44 +504,9 @@ public class Oputuvanna1 extends JFrame {
 			});
 		}
 
-		File file_vuvestuProfil = new File(s_rekomendacia);
-		try {
-			image_vuvestuProfil = ImageIO.read(file_vuvestuProfil);
-			l_recomendacia.setIcon(new ImageIcon(image_vuvestuProfil));
-		} catch (Exception e1) {
-		}
+ 
 
-		JButton b_kuputu = new JButton("Перейти до купівлі");
-		b_kuputu.setBounds(0, 524, 200, 41);
-		getContentPane().add(b_kuputu);
-
-		JButton b_misce = new JButton("Місця для занять");
-		b_misce.setBounds(397, 524, 200, 41);
-		getContentPane().add(b_misce);
-
-		JButton b_ekipirivka = new JButton("Екіпіровка");
-		b_ekipirivka.setBounds(199, 524, 200, 41);
-		getContentPane().add(b_ekipirivka);
-
-		if (s_choice_Vik.equals("до 18")) {
-			JButton b_Hkola = new JButton("Спортивні школи");
-			b_Hkola.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-
-				}
-			});
-			b_Hkola.setBounds(594, 524, 200, 41);
-			getContentPane().add(b_Hkola);
-		} else {
-			JButton b_Klub = new JButton("Ігрові клуби");
-			b_Klub.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-
-				}
-			});
-			b_Klub.setBounds(594, 524, 200, 41);
-			getContentPane().add(b_Klub);
-		}
+		hapka(s_choice_Vik);
 
 		setVisible(true);
 	}
@@ -617,16 +529,7 @@ public class Oputuvanna1 extends JFrame {
 		}
 	}
 
-	public void OputuvannaZdorovja(String s_choice_Vik, String s_choice_Stat, String s_choice_Vaga,
-			String s_choice_Zrist, String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu,
-			String s_choice_Uminna) {
-
-		hapka();
-
-		setVisible(true);
-	}
-
-	public void hapka() {
+	public void hapka(String s_choice_Vik) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(800, 600);
 		setResizable(false);
@@ -649,5 +552,77 @@ public class Oputuvanna1 extends JFrame {
 		b_Nazad.setIcon(new ImageIcon("res/Nazad.png"));
 		b_Nazad.setBounds(0, 0, 46, 41);
 		getContentPane().add(b_Nazad);
+
+		// де-які важливі деталі
+
+		JButton b_kuputu = new JButton("Перейти до купівлі");
+		b_kuputu.setBounds(0, 524, 200, 41);
+		getContentPane().add(b_kuputu);
+
+		JButton b_misce = new JButton("Місця для занять");
+		b_misce.setBounds(397, 524, 200, 41);
+		getContentPane().add(b_misce);
+
+		JButton b_ekipirivka = new JButton("Екіпіровка");
+		b_ekipirivka.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (boo_Ekipirivka == false) {
+					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
+							"Увага", JOptionPane.WARNING_MESSAGE);
+				}
+			}
+		});
+		b_ekipirivka.setBounds(199, 524, 200, 41);
+		getContentPane().add(b_ekipirivka);
+
+		JLabel l_rekomandacia = new JLabel();
+		scrollPane_Recomandacia.setViewportView(l_rekomandacia);
+
+		File file_vuvestuProfil = new File(s_rekomendacia);
+
+		try {
+			image_vuvestuProfil = ImageIO.read(file_vuvestuProfil);
+		} catch (Exception e1) {
+		}
+
+		l_rekomandacia.setIcon(new ImageIcon(image_vuvestuProfil));
+
+		if (s_choice_Vik.equals("до 18")) {
+			JButton b_Hkola = new JButton("Спортивні школи");
+			b_Hkola.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+
+				}
+			});
+			b_Hkola.setBounds(594, 524, 200, 41);
+			getContentPane().add(b_Hkola);
+		} else {
+			JButton b_Klub = new JButton("Ігрові клуби");
+			b_Klub.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+
+				}
+			});
+			b_Klub.setBounds(594, 524, 200, 41);
+			getContentPane().add(b_Klub);
+		}
+
+	}
+
+	public void OputuvannaZdorovja(String s_choice_Vik, String s_choice_Stat, String s_choice_Vaga,
+			String s_choice_Zrist, String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu,
+			String s_choice_Uminna) {
+
+		Zdorovia(s_choice_Zdorovj, s_choice_Vik, s_choice_Vaga, s_choice_Zrist, s_choice_VudSportu);
+//		
+		s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Гвинтівка" + "/" + "MinUminna.png";
+
+		scrollPane_Recomandacia = new JScrollPane();
+		scrollPane_Recomandacia.setBounds(0, 213, 794, 312);
+		getContentPane().add(scrollPane_Recomandacia);
+//		
+		hapka(s_choice_Vik);
+
+		setVisible(true);
 	}
 }
