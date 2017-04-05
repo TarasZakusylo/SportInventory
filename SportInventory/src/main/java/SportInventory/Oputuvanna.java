@@ -55,6 +55,10 @@ public class Oputuvanna extends JFrame {
 
 	Desktop desktop = Desktop.getDesktop();
 
+	private JLabel l_Vud;
+	private Choice choice_VudBoyoviM;
+	private Choice choice_VudVesluvanna;
+
 	public Oputuvanna() {
 		getContentPane().addMouseListener(new MouseAdapter() {
 			@Override
@@ -90,11 +94,31 @@ public class Oputuvanna extends JFrame {
 					l_VudZbroi1.setBounds(544, 282, 184, 28);
 
 				}
-				if (s_choice_VudSportu.equals("Шахи") && boolean_ZminaSporty == false) {
+				if (s_choice_VudSportu.equals("Шахи") && boolean_ZminaSporty == false
+						|| s_choice_VudSportu.equals("Важка атлетика") && boolean_ZminaSporty == false
+						|| s_choice_VudSportu.equals("Альпінізм") && boolean_ZminaSporty == false) {
 
 					ocustutu();
 
 				}
+				if (s_choice_VudSportu.equals("Бойові мистецтва") && boolean_ZminaSporty == false) {
+
+					ocustutu();
+
+					l_kartunka.setBounds(0, 0, 0, 0);
+					l_Vud.setBounds(544, 152, 184, 28);
+					choice_VudBoyoviM.setBounds(544, 208, 184, 22);
+
+				}
+				if (s_choice_VudSportu.equals("Веслування") && boolean_ZminaSporty == false) {
+
+					ocustutu();
+
+					l_kartunka.setBounds(0, 0, 0, 0);
+					l_Vud.setBounds(544, 152, 184, 28);
+					choice_VudVesluvanna.setBounds(544, 208, 184, 22);
+				}
+
 			}
 		});
 
@@ -240,6 +264,11 @@ public class Oputuvanna extends JFrame {
 		choice_VudSportu.add("Стрільба");
 		choice_VudSportu.add("Шахи");
 
+		choice_VudSportu.add("Бойові мистецтва");
+		choice_VudSportu.add("Важка атлетика");
+		choice_VudSportu.add("Веслування");
+		choice_VudSportu.add("Альпінізм");
+
 		l_Uminna = new JLabel("Рівень умінь:");
 		l_Uminna.setFont(new Font("Times New Roman", Font.PLAIN, 23));
 		l_Uminna.setBounds(23, 507, 184, 28);
@@ -265,6 +294,7 @@ public class Oputuvanna extends JFrame {
 				String s_choice_Finansu = choice_Finansu.getSelectedItem();
 				String s_choice_VudSportu = choice_VudSportu.getSelectedItem();
 				String s_choice_Uminna = choice_Uminna.getSelectedItem();
+
 				String s_choice_Komanda = choice_Komanda.getSelectedItem();
 
 				String s_choice_VudStrilbu = choice_VudStrilbu.getSelectedItem();
@@ -277,15 +307,6 @@ public class Oputuvanna extends JFrame {
 							s_choice_VudSportu, s_choice_Komanda);
 					setVisible(false);
 				}
-				// else {
-				// new Oputuvanna1(s_choice_Vik, s_choice_Stat, s_choice_Vaga,
-				// s_choice_Zrist, s_choice_Zdorovj,
-				// s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna);
-				// }
-
-				choice_Finansu.add("");
-				choice_Finansu.add("Часто задумуюсь про свій бюджет");
-				choice_Finansu.add("Ледве зводжу кінці з кінцями");
 
 				if (s_choice_VudSportu.equals("Стрільба")) {
 					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
@@ -305,16 +326,23 @@ public class Oputuvanna extends JFrame {
 						}
 
 					} else {
-						new Oputuvanna1(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
-								s_choice_VudStrilbu, s_choice_VudZbroi , s_choice_Vik);
+						new Oputuvanna1(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna, s_choice_VudStrilbu,
+								s_choice_VudZbroi, s_choice_Vik);
 						setVisible(false);
 					}
 
 				}
 
 				if (s_choice_VudSportu.equals("Шахи")) {
-					new Oputuvanna1( s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
-							s_choice_VudStrilbu, s_choice_VudZbroi , s_choice_Vik);
+					new Oputuvanna1(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna, s_choice_VudStrilbu,
+							s_choice_VudZbroi, s_choice_Vik);
+					setVisible(false);
+				}
+
+				if (s_choice_VudSportu.equals("Бойові мистецтва") || s_choice_VudSportu.equals("Важка атлетика")
+						|| s_choice_VudSportu.equals("Веслування") || s_choice_VudSportu.equals("Альпінізм")) {
+					new Oputuvanna1(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,
+							s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna);
 					setVisible(false);
 				}
 
@@ -391,6 +419,34 @@ public class Oputuvanna extends JFrame {
 		choice_VudZbroi.add("Пістолет");
 		choice_VudZbroi.add("Лук");
 
+		l_Vud = new JLabel("Вкажіть вид");
+		l_Vud.setHorizontalAlignment(SwingConstants.CENTER);
+		l_Vud.setFont(new Font("Times New Roman", Font.PLAIN, 23));
+		l_Vud.setBounds(0, 0, 0, 0);
+		getContentPane().add(l_Vud);
+
+		choice_VudBoyoviM = new Choice();
+		choice_VudBoyoviM.setBounds(0, -50, 0, 0);
+		getContentPane().add(choice_VudBoyoviM);
+		choice_VudBoyoviM.add("Бокс");
+		choice_VudBoyoviM.add("Боротьба");
+		choice_VudBoyoviM.add("Теквандо");
+		choice_VudBoyoviM.add("Айкідо");
+		choice_VudBoyoviM.add("Самбо");
+		choice_VudBoyoviM.add("Кікбоксинг");
+		choice_VudBoyoviM.add("Панкратіон");
+		choice_VudBoyoviM.add("Сумо");
+		choice_VudBoyoviM.add("Теквандо");
+		choice_VudBoyoviM.add("Ушу");
+
+		choice_VudVesluvanna = new Choice();
+		choice_VudVesluvanna.setBounds(0, -50, 0, 0);
+		getContentPane().add(choice_VudVesluvanna);
+		choice_VudVesluvanna.add("Академічне");
+		choice_VudVesluvanna.add("Байдарка");
+		choice_VudVesluvanna.add("Каное");
+		choice_VudVesluvanna.add("Слалом");
+
 		l_kartunka = new JLabel("");
 		l_kartunka.setHorizontalAlignment(SwingConstants.CENTER);
 		l_kartunka.setIcon(new ImageIcon("res/kartunka_Zaput1.png"));
@@ -415,6 +471,9 @@ public class Oputuvanna extends JFrame {
 		choice_VudZbroi.setBounds(0, 0, 0, 0);
 		l_VudZbroi.setBounds(0, 0, 0, 0);
 		l_VudZbroi1.setBounds(0, 0, 0, 0);
+		choice_VudBoyoviM.setBounds(0, 0, 0, 0);
+		choice_VudVesluvanna.setBounds(0, 0, 0, 0);
+		l_Vud.setBounds(0, 0, 0, 0);
 
 		l_kartunka.setBounds(510, 66, 260, 428);
 
