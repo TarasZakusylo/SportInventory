@@ -300,6 +300,9 @@ public class Oputuvanna extends JFrame {
 				String s_choice_VudStrilbu = choice_VudStrilbu.getSelectedItem();
 				String s_choice_VudZbroi = choice_VudZbroi.getSelectedItem();
 
+				String s_choice_VudBoyoviM = choice_VudBoyoviM.getSelectedItem();
+				String s_choice_VudVesluvanna = choice_VudVesluvanna.getSelectedItem();
+
 				if (s_choice_VudSportu.equals("Волейбол") || s_choice_VudSportu.equals("Футбол")
 						|| s_choice_VudSportu.equals("Баскетбол") || s_choice_VudSportu.equals("Ганбол")
 						|| s_choice_VudSportu.equals("Хокей")) {
@@ -338,11 +341,24 @@ public class Oputuvanna extends JFrame {
 							s_choice_VudStrilbu, s_choice_VudZbroi, s_choice_Vik);
 					setVisible(false);
 				}
-				if (s_choice_VudSportu.equals("Бойові мистецтва") || s_choice_VudSportu.equals("Важка атлетика")
-						|| s_choice_VudSportu.equals("Веслування") || s_choice_VudSportu.equals("Альпінізм")) {
+				if (s_choice_VudSportu.equals("Важка атлетика") || s_choice_VudSportu.equals("Альпінізм")) {
 					Oputuvanna1 oputuvannaZdorovja = new Oputuvanna1();
 					oputuvannaZdorovja.OputuvannaZdorovja(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist,
-							s_choice_Zdorovj, s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna);
+							s_choice_Zdorovj, s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna, "1");
+					setVisible(false);
+				}
+				if (s_choice_VudSportu.equals("Бойові мистецтва")) {
+					Oputuvanna1 oputuvannaZdorovja = new Oputuvanna1();
+					oputuvannaZdorovja.OputuvannaZdorovja(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist,
+							s_choice_Zdorovj, s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
+							s_choice_VudBoyoviM);
+					setVisible(false);
+				}
+				if (s_choice_VudSportu.equals("Веслування")) {
+					Oputuvanna1 oputuvannaZdorovja = new Oputuvanna1();
+					oputuvannaZdorovja.OputuvannaZdorovja(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist,
+							s_choice_Zdorovj, s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
+							s_choice_VudVesluvanna);
 					setVisible(false);
 				}
 			}
@@ -429,7 +445,7 @@ public class Oputuvanna extends JFrame {
 		getContentPane().add(choice_VudBoyoviM);
 		choice_VudBoyoviM.add("Бокс");
 		choice_VudBoyoviM.add("Боротьба");
-		choice_VudBoyoviM.add("Теквандо");
+		choice_VudBoyoviM.add("Тхеквондо");
 		choice_VudBoyoviM.add("Айкідо");
 		choice_VudBoyoviM.add("Самбо");
 		choice_VudBoyoviM.add("Кікбоксинг");
@@ -444,7 +460,6 @@ public class Oputuvanna extends JFrame {
 		choice_VudVesluvanna.add("Академічне");
 		choice_VudVesluvanna.add("Байдарка");
 		choice_VudVesluvanna.add("Каное");
-		choice_VudVesluvanna.add("Слалом");
 
 		l_kartunka = new JLabel("");
 		l_kartunka.setHorizontalAlignment(SwingConstants.CENTER);

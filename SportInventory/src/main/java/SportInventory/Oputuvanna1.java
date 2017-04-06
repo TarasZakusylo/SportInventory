@@ -21,6 +21,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Oputuvanna1 extends JFrame {
+	public Oputuvanna1() {
+	}
 
 	private static final long serialVersionUID = 1L;
 
@@ -504,8 +506,6 @@ public class Oputuvanna1 extends JFrame {
 			});
 		}
 
- 
-
 		hapka(s_choice_Vik);
 
 		setVisible(true);
@@ -611,16 +611,169 @@ public class Oputuvanna1 extends JFrame {
 
 	public void OputuvannaZdorovja(String s_choice_Vik, String s_choice_Stat, String s_choice_Vaga,
 			String s_choice_Zrist, String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu,
-			String s_choice_Uminna) {
+			String s_choice_Uminna, String s_choice_Vud) {
 
 		Zdorovia(s_choice_Zdorovj, s_choice_Vik, s_choice_Vaga, s_choice_Zrist, s_choice_VudSportu);
-//		
-		s_rekomendacia = "res" + "/" + "Стрільба" + "/" + "Гвинтівка" + "/" + "MinUminna.png";
 
 		scrollPane_Recomandacia = new JScrollPane();
-		scrollPane_Recomandacia.setBounds(0, 213, 794, 312);
+		scrollPane_Recomandacia.setBounds(0, 116, 794, 409);
 		getContentPane().add(scrollPane_Recomandacia);
-//		
+
+		JLabel l_recomendacia = new JLabel("");
+		// l_recomendacia.addMouseListener(new MouseAdapter() {
+		// @Override
+		// public void mouseEntered(MouseEvent arg0) {
+		// stendova(s_choice_VudStrilbu);
+		// }
+		// });
+		scrollPane_Recomandacia.setViewportView(l_recomendacia);
+
+		if (s_choice_VudSportu.equals("Бойові мистецтва") || s_choice_VudSportu.equals("Важка атлетика")) {
+
+			l_komentar = new JLabel("Даний вид спорту досить невибагливий відносто інвентаря");
+			l_komentar.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			l_komentar.setHorizontalAlignment(SwingConstants.CENTER);
+			l_komentar.setBounds(0, 74, 794, 25);
+			getContentPane().add(l_komentar);
+
+			if (s_choice_VudSportu.equals("Бойові мистецтва")) {
+
+				if (s_choice_Vud.equals("Боротьба") || s_choice_Vud.equals("Айкідо")
+						|| s_choice_Vud.equals("Панкратіон") || s_choice_Vud.equals("Сумо")) {
+					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "БоротьбаАйкідоПанкратіонСумо" + "/"
+								+ "MinFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Важко відповісти")) {
+						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "БоротьбаАйкідоПанкратіонСумо" + "/"
+								+ "NormFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Для мене гроші - не проблема")
+							|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
+						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "БоротьбаАйкідоПанкратіонСумо" + "/"
+								+ "MaxFinansu.png";
+					}
+				}
+				if (s_choice_Vud.equals("Бокс") || s_choice_Vud.equals("Самбо") || s_choice_Vud.equals("Кікбоксинг")) {
+					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "БоксСамбоКікбоксинг" + "/"
+								+ "MinFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Важко відповісти")) {
+						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "БоксСамбоКікбоксинг" + "/"
+								+ "NormFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Для мене гроші - не проблема")
+							|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
+						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "БоксСамбоКікбоксинг" + "/"
+								+ "MaxFinansu.png";
+					}
+				}
+				if (s_choice_Vud.equals("Тхеквондо") || s_choice_Vud.equals("Теквандо") || s_choice_Vud.equals("Ушу")) {
+					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "ТхеквондоТеквандоУшу" + "/"
+								+ "MinFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Важко відповісти")) {
+						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "ТхеквондоТеквандоУшу" + "/"
+								+ "NormFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Для мене гроші - не проблема")
+							|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
+						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "ТхеквондоТеквандоУшу" + "/"
+								+ "MaxFinansu.png";
+					}
+				}
+
+			} else { // Важка атлетика
+				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+					s_rekomendacia = "res" + "/" + "Важка атлетика" + "/" + "MinFinansu.png";
+				}
+				if (s_choice_Finansu.equals("Важко відповісти")) {
+					s_rekomendacia = "res" + "/" + "Важка атлетика" + "/" + "NormFinansu.png";
+				}
+				if (s_choice_Finansu.equals("Для мене гроші - не проблема")
+						|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
+					s_rekomendacia = "res" + "/" + "Важка атлетика" + "/" + "MaxFinansu.png";
+				}
+			}
+
+		} else {
+
+			l_komentar = new JLabel("Даний вид спорту досить вибагливий, коштовний та СЕЗОННИЙ.");
+			l_komentar1 = new JLabel("Зверніть увагу! Інвентар об'ємний, необхідне місце для зберігання.");
+
+			l_komentar.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			l_komentar.setHorizontalAlignment(SwingConstants.CENTER);
+			l_komentar.setBounds(0, 64, 794, 25);
+			getContentPane().add(l_komentar);
+
+			l_komentar1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			l_komentar1.setHorizontalAlignment(SwingConstants.CENTER);
+			l_komentar1.setBounds(0, 91, 794, 25);
+			getContentPane().add(l_komentar1);
+
+			if (s_choice_VudSportu.equals("Веслування")) {
+				if (s_choice_Vud.equals("Академічне")) {
+					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Академічне" + "/" + "MinFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Важко відповісти")) {
+						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Академічне" + "/" + "NormFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Для мене гроші - не проблема")
+							|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
+						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Академічне" + "/" + "MaxFinansu.png";
+					}
+				}
+				if (s_choice_Vud.equals("Байдарка")) {
+					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Байдарка" + "/" + "MinFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Важко відповісти")) {
+						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Байдарка" + "/" + "NormFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Для мене гроші - не проблема")
+							|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
+						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Байдарка" + "/" + "MaxFinansu.png";
+					}
+				}
+				if (s_choice_Vud.equals("Каное")) {
+					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Каное" + "/" + "MinFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Важко відповісти")) {
+						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Каное" + "/" + "NormFinansu.png";
+					}
+					if (s_choice_Finansu.equals("Для мене гроші - не проблема")
+							|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
+						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Каное" + "/" + "MaxFinansu.png";
+					}
+				}
+
+			} else { // Альпінізм
+				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+					s_rekomendacia = "res" + "/" + "Альпінізм" + "/" + "MinFinansu.png";
+				}
+				if (s_choice_Finansu.equals("Важко відповісти")) {
+					s_rekomendacia = "res" + "/" + "Альпінізм" + "/" + "MaxFinansu.png";
+				}
+				if (s_choice_Finansu.equals("Для мене гроші - не проблема")
+						|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
+					s_rekomendacia = "res" + "/" + "Альпінізм" + "/" + "MinFinansu.png";
+				}
+			}
+
+		}
+
 		hapka(s_choice_Vik);
 
 		setVisible(true);
