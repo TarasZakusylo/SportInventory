@@ -684,14 +684,10 @@ public class Oputuvanna1 extends JFrame {
 
 			} else { // Важка атлетика
 				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
-						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")
+						|| s_choice_Finansu.equals("Важко відповісти")) {
 					s_rekomendacia = "res" + "/" + "Важка атлетика" + "/" + "MinFinansu.png";
-				}
-				if (s_choice_Finansu.equals("Важко відповісти")) {
-					s_rekomendacia = "res" + "/" + "Важка атлетика" + "/" + "NormFinansu.png";
-				}
-				if (s_choice_Finansu.equals("Для мене гроші - не проблема")
-						|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
+				}else{
 					s_rekomendacia = "res" + "/" + "Важка атлетика" + "/" + "MaxFinansu.png";
 				}
 			}
