@@ -620,12 +620,6 @@ public class Oputuvanna1 extends JFrame {
 		getContentPane().add(scrollPane_Recomandacia);
 
 		JLabel l_recomendacia = new JLabel("");
-		// l_recomendacia.addMouseListener(new MouseAdapter() {
-		// @Override
-		// public void mouseEntered(MouseEvent arg0) {
-		// stendova(s_choice_VudStrilbu);
-		// }
-		// });
 		scrollPane_Recomandacia.setViewportView(l_recomendacia);
 
 		if (s_choice_VudSportu.equals("Бойові мистецтва") || s_choice_VudSportu.equals("Важка атлетика")) {
