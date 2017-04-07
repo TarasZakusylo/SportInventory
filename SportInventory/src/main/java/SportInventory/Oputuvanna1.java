@@ -21,9 +21,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Oputuvanna1 extends JFrame {
-	public Oputuvanna1() {
-	}
-
+ 
 	private static final long serialVersionUID = 1L;
 
 	int i_Vik;
@@ -51,6 +49,7 @@ public class Oputuvanna1 extends JFrame {
 	Desktop desktop = Desktop.getDesktop();
 
 	private boolean boolean_StendovaStrilba = false;
+	private boolean boolean_Akademi4neVesluvanna = false;
 
 	private JScrollPane scrollPane_Recomandacia;
 
@@ -427,7 +426,7 @@ public class Oputuvanna1 extends JFrame {
 		getContentPane().add(scrollPane_Recomandacia);
 
 		JLabel l_recomendacia = new JLabel("");
-		l_recomendacia.addMouseListener(new MouseAdapter() {
+		scrollPane_Recomandacia.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
 				stendova(s_choice_VudStrilbu);
@@ -621,6 +620,12 @@ public class Oputuvanna1 extends JFrame {
 
 		JLabel l_recomendacia = new JLabel("");
 		scrollPane_Recomandacia.setViewportView(l_recomendacia);
+		scrollPane_Recomandacia.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				akademi4neVesludanna() ;
+			}
+		});
 
 		if (s_choice_VudSportu.equals("Бойові мистецтва") || s_choice_VudSportu.equals("Важка атлетика")) {
 
@@ -708,7 +713,7 @@ public class Oputuvanna1 extends JFrame {
 			getContentPane().add(l_komentar1);
 
 			if (s_choice_VudSportu.equals("Веслування")) {
-				if (s_choice_Vud.equals("Академічне")) {
+				if (s_choice_Vud.equals("Академічне")) {					
 					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
 						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Академічне" + "/" + "MinFinansu.png";
@@ -762,10 +767,27 @@ public class Oputuvanna1 extends JFrame {
 				}
 			}
 
+			getContentPane().addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseEntered(MouseEvent arg0) {
+					akademi4neVesludanna() ;
+				}
+			});
+			
 		}
 
 		hapka(s_choice_Vik);
 
 		setVisible(true);
 	}
+	
+	void akademi4neVesludanna() {
+		if (boolean_Akademi4neVesluvanna == false) {
+
+			JOptionPane.showMessageDialog(null, "Академічне веслування - командний вид спорту.");
+
+			boolean_Akademi4neVesluvanna = true;
+		}
+	}
+	
 }
