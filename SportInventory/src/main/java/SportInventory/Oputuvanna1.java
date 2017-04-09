@@ -21,7 +21,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Oputuvanna1 extends JFrame {
- 
+
 	private static final long serialVersionUID = 1L;
 
 	int i_Vik;
@@ -610,7 +610,7 @@ public class Oputuvanna1 extends JFrame {
 
 	public void OputuvannaZdorovja(String s_choice_Vik, String s_choice_Stat, String s_choice_Vaga,
 			String s_choice_Zrist, String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu,
-			String s_choice_Uminna, String s_choice_Vud) {
+			String s_choice_Uminna, final String s_choice_Vud) {
 
 		Zdorovia(s_choice_Zdorovj, s_choice_Vik, s_choice_Vaga, s_choice_Zrist, s_choice_VudSportu);
 
@@ -623,7 +623,9 @@ public class Oputuvanna1 extends JFrame {
 		scrollPane_Recomandacia.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
-				akademi4neVesludanna() ;
+				if (s_choice_Vud.equals("Академічне")) {
+					akademi4neVesludanna();
+				}	
 			}
 		});
 
@@ -692,7 +694,7 @@ public class Oputuvanna1 extends JFrame {
 						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")
 						|| s_choice_Finansu.equals("Важко відповісти")) {
 					s_rekomendacia = "res" + "/" + "Важка атлетика" + "/" + "MinFinansu.png";
-				}else{
+				} else {
 					s_rekomendacia = "res" + "/" + "Важка атлетика" + "/" + "MaxFinansu.png";
 				}
 			}
@@ -713,7 +715,7 @@ public class Oputuvanna1 extends JFrame {
 			getContentPane().add(l_komentar1);
 
 			if (s_choice_VudSportu.equals("Веслування")) {
-				if (s_choice_Vud.equals("Академічне")) {					
+				if (s_choice_Vud.equals("Академічне")) {
 					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
 						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Академічне" + "/" + "MinFinansu.png";
@@ -770,17 +772,19 @@ public class Oputuvanna1 extends JFrame {
 			getContentPane().addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseEntered(MouseEvent arg0) {
-					akademi4neVesludanna() ;
+					if (s_choice_Vud.equals("Академічне")) {
+						akademi4neVesludanna();
+					}
 				}
 			});
-			
+
 		}
 
 		hapka(s_choice_Vik);
 
 		setVisible(true);
 	}
-	
+
 	void akademi4neVesludanna() {
 		if (boolean_Akademi4neVesluvanna == false) {
 
@@ -789,5 +793,5 @@ public class Oputuvanna1 extends JFrame {
 			boolean_Akademi4neVesluvanna = true;
 		}
 	}
-	
+
 }
