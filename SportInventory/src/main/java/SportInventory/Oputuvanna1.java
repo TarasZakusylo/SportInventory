@@ -777,7 +777,6 @@ public class Oputuvanna1 extends JFrame {
 					}
 				}
 			});
-
 		}
 
 		hapka(s_choice_Vik);
