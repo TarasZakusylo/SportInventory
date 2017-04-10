@@ -761,11 +761,11 @@ public class Oputuvanna1 extends JFrame {
 					s_rekomendacia = "res" + "/" + "Альпінізм" + "/" + "MinFinansu.png";
 				}
 				if (s_choice_Finansu.equals("Важко відповісти")) {
-					s_rekomendacia = "res" + "/" + "Альпінізм" + "/" + "MaxFinansu.png";
+					s_rekomendacia = "res" + "/" + "Альпінізм" + "/" + "NormFinansu.png";
 				}
 				if (s_choice_Finansu.equals("Для мене гроші - не проблема")
 						|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
-					s_rekomendacia = "res" + "/" + "Альпінізм" + "/" + "MinFinansu.png";
+					s_rekomendacia = "res" + "/" + "Альпінізм" + "/" + "MaxFinansu.png";
 				}
 			}
 
