@@ -1,22 +1,21 @@
 package SportInventory;
 
+import java.awt.Choice;
+import java.awt.Container;
+import java.awt.Desktop;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.net.URI;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
-import java.awt.Font;
-import java.awt.Window;
-import java.awt.Choice;
-import java.awt.Container;
-import java.awt.Desktop;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.net.URI;
 
 public class Oputuvanna extends JFrame {
 
@@ -252,17 +251,17 @@ public class Oputuvanna extends JFrame {
 		});
 		choice_VudSportu.setBounds(226, 446, 249, 22);
 		getContentPane().add(choice_VudSportu);
-		choice_VudSportu.add("Теніс");
-		choice_VudSportu.add("Легка атлетика");
-
+//		choice_VudSportu.add("Теніс");
+//		choice_VudSportu.add("Легка атлетика");
+		
+		choice_VudSportu.add("Шахи");
+		choice_VudSportu.add("Стрільба");
+		
 		choice_VudSportu.add("Волейбол");
 		choice_VudSportu.add("Футбол");
 		choice_VudSportu.add("Баскетбол");
 		choice_VudSportu.add("Ганбол");
 		choice_VudSportu.add("Хокей");
-
-		choice_VudSportu.add("Стрільба");
-		choice_VudSportu.add("Шахи");
 
 		choice_VudSportu.add("Бойові мистецтва");
 		choice_VudSportu.add("Важка атлетика");
