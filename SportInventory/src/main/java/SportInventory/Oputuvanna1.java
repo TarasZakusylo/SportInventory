@@ -53,6 +53,8 @@ public class Oputuvanna1 extends JFrame {
 
 	private JScrollPane scrollPane_Recomandacia;
 
+	JButton b_ekipirivka = new JButton("Екіпіровка");
+	
 	public void OputuvannaKomanda(String s_choice_Vik, String s_choice_Vaga, String s_choice_Zrist,
 			String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Komanda) {
 
@@ -74,7 +76,7 @@ public class Oputuvanna1 extends JFrame {
 
 		if (s_choice_Finansu.equals("Для мене гроші - не проблема")
 				|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
-			l_min_finansu = new JLabel("Ваш бюджет це повна свобота,");
+			l_min_finansu = new JLabel("Ваш бюджет це повна свобода,");
 			if (s_choice_Vik.equals("до 18")) {
 				s_Hkola_Klub = "cпорт школи";
 			} else {
@@ -90,6 +92,14 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI("http://www.volleymag.com.ua/catalog/myzhskaja-igrovaja-forma/"));
+						} catch (Exception e1) {
+						}
+					}
+				});
 			}
 			if (s_choice_VudSportu.equals("Футбол")) {
 				s_rekomendacia = "res" + "/" + "Footboll" + "/" + "MaxFinansu.png";
@@ -99,6 +109,14 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI("http://soccer-shop.com.ua/c1-futbolnaya_forma"));
+						} catch (Exception e1) {
+						}
+					}
+				});
 			}
 			if (s_choice_VudSportu.equals("Баскетбол")) {
 				s_rekomendacia = "res" + "/" + "Basketball" + "/" + "MaxFinansu.png";
@@ -107,6 +125,15 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI(
+									"http://og-shop.in.ua/ru/shop/Obyv/?param&select[6][]=48&select[7][]=108&sort=popular"));
+						} catch (Exception e1) {
+						}
+					}
+				});
 			}
 			if (s_choice_VudSportu.equals("Ганбол")) {
 				s_rekomendacia = "res" + "/" + "Handball" + "/" + "MaxFinansu.png";
@@ -116,6 +143,15 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI("http://4sport.com.ua/sports/handball/buy-gandbolnaya-forma/"));
+						} catch (Exception e1) {
+						}
+					}
+				});
 			}
 			if (s_choice_VudSportu.equals("Хокей")) {
 				s_rekomendacia = "res" + "/" + "Хокей" + "/" + "MaxFinansu.png";
@@ -125,6 +161,16 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI("http://iqhockey.com.ua/about-us.html"));
+						} catch (Exception e1) {
+						}
+					}
+				});
+
 			}
 
 			boo_Ekipirivka = true;
@@ -146,6 +192,15 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI("http://www.volleymag.com.ua/catalog/myzhskaja-igrovaja-forma/"));
+						} catch (Exception e1) {
+						}
+					}
+				});
 			}
 			if (s_choice_VudSportu.equals("Футбол")) {
 				s_rekomendacia = "res" + "/" + "Footboll" + "/" + "NormFinansu.png";
@@ -155,6 +210,15 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI("http://soccer-shop.com.ua/c1-futbolnaya_forma"));
+						} catch (Exception e1) {
+						}
+					}
+				});
 			}
 			if (s_choice_VudSportu.equals("Баскетбол")) {
 				s_rekomendacia = "res" + "/" + "Basketball" + "/" + "NormFinansu.png";
@@ -163,6 +227,17 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI(
+									"http://og-shop.in.ua/ru/shop/Obyv/?param&select[6][]=48&select[7][]=108&sort=popular"));
+						} catch (Exception e1) {
+						}
+					}
+				});
+
 			}
 			if (s_choice_VudSportu.equals("Ганбол")) {
 				s_rekomendacia = "res" + "/" + "Handball" + "/" + "NormFinansu.png";
@@ -172,6 +247,16 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI("http://4sport.com.ua/sports/handball/buy-gandbolnaya-forma/"));
+						} catch (Exception e1) {
+						}
+					}
+				});
+
 			}
 			if (s_choice_VudSportu.equals("Хокей")) {
 				s_rekomendacia = "res" + "/" + "Хокей" + "/" + "NormFinansu.png";
@@ -181,6 +266,16 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI("http://iqhockey.com.ua/about-us.html"));
+						} catch (Exception e1) {
+						}
+					}
+				});
+
 			}
 
 			boo_Ekipirivka = true;
@@ -197,6 +292,7 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+
 			}
 			if (s_choice_VudSportu.equals("Футбол")) {
 				s_rekomendacia = "res" + "/" + "Footboll" + "/" + "MinFinansu.png";
@@ -205,6 +301,7 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+
 			}
 			if (s_choice_VudSportu.equals("Баскетбол")) {
 				s_rekomendacia = "res" + "/" + "Basketball" + "/" + "MinFinansu.png";
@@ -213,6 +310,7 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
+
 			}
 			if (s_choice_VudSportu.equals("Ганбол")) {
 				s_rekomendacia = "res" + "/" + "Handball" + "/" + "MinFinansu.png";
@@ -448,8 +546,15 @@ public class Oputuvanna1 extends JFrame {
 			} else {
 				s_rekomendacia = "res" + "/" + "Шахи" + "/" + "MaxFinansu.png";
 			}
-		} else {
 
+			b_ekipirivka.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					JOptionPane.showMessageDialog(null, "Даний вид спорту не передбачає екіпіровки");
+				}
+			});
+
+		} else {
+			// стрільба
 			l_komentar = new JLabel("Даний вид спорту досить вибагливий та коштовний.");
 			l_komentar1 = new JLabel("Також Вам необхідний тир чи полігон.");
 
@@ -503,6 +608,16 @@ public class Oputuvanna1 extends JFrame {
 					stendova(s_choice_VudStrilbu);
 				}
 			});
+
+			b_ekipirivka.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					try {
+						desktop.browse(new URI("http://www.shooting-ua.com/arhiv_sorevnovaniy/methods_17.5.htm"));
+					} catch (Exception e1) {
+					}
+				}
+			});
+
 		}
 
 		hapka(s_choice_Vik);
@@ -562,7 +677,7 @@ public class Oputuvanna1 extends JFrame {
 		b_misce.setBounds(397, 524, 200, 41);
 		getContentPane().add(b_misce);
 
-		JButton b_ekipirivka = new JButton("Екіпіровка");
+		
 		b_ekipirivka.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (boo_Ekipirivka == false) {
@@ -609,7 +724,7 @@ public class Oputuvanna1 extends JFrame {
 	}
 
 	public void OputuvannaZdorovja(String s_choice_Vik, String s_choice_Stat, String s_choice_Vaga,
-			String s_choice_Zrist, String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu,
+			String s_choice_Zrist, String s_choice_Zdorovj, final String s_choice_Finansu, String s_choice_VudSportu,
 			String s_choice_Uminna, final String s_choice_Vud) {
 
 		Zdorovia(s_choice_Zdorovj, s_choice_Vik, s_choice_Vaga, s_choice_Zrist, s_choice_VudSportu);
@@ -625,7 +740,7 @@ public class Oputuvanna1 extends JFrame {
 			public void mouseEntered(MouseEvent arg0) {
 				if (s_choice_Vud.equals("Академічне")) {
 					akademi4neVesludanna();
-				}	
+				}
 			}
 		});
 
@@ -655,6 +770,42 @@ public class Oputuvanna1 extends JFrame {
 						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "БоротьбаАйкідоПанкратіонСумо" + "/"
 								+ "MaxFinansu.png";
 					}
+
+					b_ekipirivka.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+									|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+								JOptionPane.showMessageDialog(null,
+										"На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.", "Увага",
+										JOptionPane.WARNING_MESSAGE);
+							} else {
+								if (s_choice_Vud.equals("Боротьба")) {
+									try {
+										desktop.browse(new URI("http://adx.in.ua/g3650237-borba"));
+									} catch (Exception e1) {
+									}
+								}
+								if (s_choice_Vud.equals("Айкідо")) {
+									try {
+										desktop.browse(new URI("http://prom.ua/Kimono-dlya-ajkido.html"));
+									} catch (Exception e1) {
+									}
+								}
+								if (s_choice_Vud.equals("Панкратіон")) {
+									try {
+										desktop.browse(new URI("http://sportcombat.com.ua/catalog/pankration"));
+									} catch (Exception e1) {
+									}
+								}
+							}
+							if (s_choice_Vud.equals("Сумо")) {
+								JOptionPane.showMessageDialog(null,
+										"Мавасі робиться методом складання 50см. тканини великої товщини.");
+							}
+
+						}
+					});
+
 				}
 				if (s_choice_Vud.equals("Бокс") || s_choice_Vud.equals("Самбо") || s_choice_Vud.equals("Кікбоксинг")) {
 					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
@@ -671,6 +822,32 @@ public class Oputuvanna1 extends JFrame {
 						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "БоксСамбоКікбоксинг" + "/"
 								+ "MaxFinansu.png";
 					}
+
+					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+						JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
+								"Увага", JOptionPane.WARNING_MESSAGE);
+					} else {
+						if (s_choice_Vud.equals("Бокс")) {
+							try {
+								desktop.browse(new URI("http://adx.in.ua/g4836866-boks-ekipirovka-forma"));
+							} catch (Exception e1) {
+							}
+						}
+						if (s_choice_Vud.equals("Самбо")) {
+							try {
+								desktop.browse(new URI("http://viasport.com.ua/martial-arts/sambo"));
+							} catch (Exception e1) {
+							}
+						}
+						if (s_choice_Vud.equals("Кікбоксинг")) {
+							try {
+								desktop.browse(new URI("http://adx.in.ua/g3650222-kikboksing"));
+							} catch (Exception e1) {
+							}
+						}
+					}
+
 				}
 				if (s_choice_Vud.equals("Тхеквондо") || s_choice_Vud.equals("Теквандо") || s_choice_Vud.equals("Ушу")) {
 					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
@@ -687,6 +864,32 @@ public class Oputuvanna1 extends JFrame {
 						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "ТхеквондоТеквандоУшу" + "/"
 								+ "MaxFinansu.png";
 					}
+
+					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+						JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
+								"Увага", JOptionPane.WARNING_MESSAGE);
+					} else {
+						if (s_choice_Vud.equals("Тхеквондо")) {
+							try {
+								desktop.browse(new URI("http://adx.in.ua/g4748042-thekvondo-wtf"));
+							} catch (Exception e1) {
+							}
+						}
+						if (s_choice_Vud.equals("Теквандо")) {
+							try {
+								desktop.browse(new URI("http://adx.in.ua/g4748042-thekvondo-wtf"));
+							} catch (Exception e1) {
+							}
+						}
+						if (s_choice_Vud.equals("Ушу")) {
+							try {
+								desktop.browse(new URI("https://bokuto.com.ua/odejda/taichi/"));
+							} catch (Exception e1) {
+							}
+						}
+					}
+
 				}
 
 			} else { // Важка атлетика
@@ -697,6 +900,19 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					s_rekomendacia = "res" + "/" + "Важка атлетика" + "/" + "MaxFinansu.png";
 				}
+
+				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
+							"Увага", JOptionPane.WARNING_MESSAGE);
+				} else {
+
+					try {
+						desktop.browse(new URI("http://terrasport.ua/dir_heavy_weight.htm"));
+					} catch (Exception e1) {
+					}
+				}
+
 			}
 
 		} else {
@@ -755,6 +971,18 @@ public class Oputuvanna1 extends JFrame {
 					}
 				}
 
+				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
+							"Увага", JOptionPane.WARNING_MESSAGE);
+				} else {
+
+					try {
+						desktop.browse(new URI("https://nicebike.ru/lodki/odegda_dlia_grebli/"));
+					} catch (Exception e1) {
+					}
+				}
+				
 			} else { // Альпінізм
 				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
@@ -767,6 +995,19 @@ public class Oputuvanna1 extends JFrame {
 						|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
 					s_rekomendacia = "res" + "/" + "Альпінізм" + "/" + "MaxFinansu.png";
 				}
+				
+				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
+							"Увага", JOptionPane.WARNING_MESSAGE);
+				} else {
+
+					try {
+						desktop.browse(new URI("http://alp.com.ua/odezjda-i-obuv"));
+					} catch (Exception e1) {
+					}
+				}
+				
 			}
 
 			getContentPane().addMouseListener(new MouseAdapter() {
