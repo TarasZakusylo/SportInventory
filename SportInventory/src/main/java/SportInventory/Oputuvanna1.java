@@ -38,7 +38,6 @@ public class Oputuvanna1 extends JFrame {
 
 	private static BufferedImage image_vuvestuProfil;
 
-	boolean boo_Ekipirivka;
 	String s_Hkola_Klub;
 
 	int i_Navantagenna = 0;
@@ -54,7 +53,7 @@ public class Oputuvanna1 extends JFrame {
 	private JScrollPane scrollPane_Recomandacia;
 
 	JButton b_ekipirivka = new JButton("Екіпіровка");
-	
+
 	public void OputuvannaKomanda(String s_choice_Vik, String s_choice_Vaga, String s_choice_Zrist,
 			String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Komanda) {
 
@@ -173,7 +172,6 @@ public class Oputuvanna1 extends JFrame {
 
 			}
 
-			boo_Ekipirivka = true;
 		}
 		if (s_choice_Finansu.equals("Важко відповісти")) {
 			l_min_finansu = new JLabel("Ваш бюджет досить вільний,");
@@ -278,7 +276,6 @@ public class Oputuvanna1 extends JFrame {
 
 			}
 
-			boo_Ekipirivka = true;
 		}
 		if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 				|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
@@ -330,7 +327,14 @@ public class Oputuvanna1 extends JFrame {
 				}
 			}
 
-			boo_Ekipirivka = false;
+			b_ekipirivka.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+
+					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
+							"Увага", JOptionPane.WARNING_MESSAGE);
+				}
+
+			});
 
 		}
 
@@ -677,15 +681,6 @@ public class Oputuvanna1 extends JFrame {
 		b_misce.setBounds(397, 524, 200, 41);
 		getContentPane().add(b_misce);
 
-		
-		b_ekipirivka.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if (boo_Ekipirivka == false) {
-					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
-							"Увага", JOptionPane.WARNING_MESSAGE);
-				}
-			}
-		});
 		b_ekipirivka.setBounds(199, 524, 200, 41);
 		getContentPane().add(b_ekipirivka);
 
@@ -807,6 +802,7 @@ public class Oputuvanna1 extends JFrame {
 					});
 
 				}
+
 				if (s_choice_Vud.equals("Бокс") || s_choice_Vud.equals("Самбо") || s_choice_Vud.equals("Кікбоксинг")) {
 					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
@@ -823,30 +819,35 @@ public class Oputuvanna1 extends JFrame {
 								+ "MaxFinansu.png";
 					}
 
-					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
-							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
-						JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
-								"Увага", JOptionPane.WARNING_MESSAGE);
-					} else {
-						if (s_choice_Vud.equals("Бокс")) {
-							try {
-								desktop.browse(new URI("http://adx.in.ua/g4836866-boks-ekipirovka-forma"));
-							} catch (Exception e1) {
+					b_ekipirivka.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+									|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+								JOptionPane.showMessageDialog(null,
+										"На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.", "Увага",
+										JOptionPane.WARNING_MESSAGE);
+							} else {
+								if (s_choice_Vud.equals("Бокс")) {
+									try {
+										desktop.browse(new URI("http://adx.in.ua/g4836866-boks-ekipirovka-forma"));
+									} catch (Exception e1) {
+									}
+								}
+								if (s_choice_Vud.equals("Самбо")) {
+									try {
+										desktop.browse(new URI("http://viasport.com.ua/martial-arts/sambo"));
+									} catch (Exception e1) {
+									}
+								}
+								if (s_choice_Vud.equals("Кікбоксинг")) {
+									try {
+										desktop.browse(new URI("http://adx.in.ua/g3650222-kikboksing"));
+									} catch (Exception e1) {
+									}
+								}
 							}
 						}
-						if (s_choice_Vud.equals("Самбо")) {
-							try {
-								desktop.browse(new URI("http://viasport.com.ua/martial-arts/sambo"));
-							} catch (Exception e1) {
-							}
-						}
-						if (s_choice_Vud.equals("Кікбоксинг")) {
-							try {
-								desktop.browse(new URI("http://adx.in.ua/g3650222-kikboksing"));
-							} catch (Exception e1) {
-							}
-						}
-					}
+					});
 
 				}
 				if (s_choice_Vud.equals("Тхеквондо") || s_choice_Vud.equals("Теквандо") || s_choice_Vud.equals("Ушу")) {
@@ -865,31 +866,35 @@ public class Oputuvanna1 extends JFrame {
 								+ "MaxFinansu.png";
 					}
 
-					if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
-							|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
-						JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
-								"Увага", JOptionPane.WARNING_MESSAGE);
-					} else {
-						if (s_choice_Vud.equals("Тхеквондо")) {
-							try {
-								desktop.browse(new URI("http://adx.in.ua/g4748042-thekvondo-wtf"));
-							} catch (Exception e1) {
+					b_ekipirivka.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+									|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+								JOptionPane.showMessageDialog(null,
+										"На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.", "Увага",
+										JOptionPane.WARNING_MESSAGE);
+							} else {
+								if (s_choice_Vud.equals("Тхеквондо")) {
+									try {
+										desktop.browse(new URI("http://adx.in.ua/g4748042-thekvondo-wtf"));
+									} catch (Exception e1) {
+									}
+								}
+								if (s_choice_Vud.equals("Теквандо")) {
+									try {
+										desktop.browse(new URI("http://adx.in.ua/g4748042-thekvondo-wtf"));
+									} catch (Exception e1) {
+									}
+								}
+								if (s_choice_Vud.equals("Ушу")) {
+									try {
+										desktop.browse(new URI("https://bokuto.com.ua/odejda/taichi/"));
+									} catch (Exception e1) {
+									}
+								}
 							}
 						}
-						if (s_choice_Vud.equals("Теквандо")) {
-							try {
-								desktop.browse(new URI("http://adx.in.ua/g4748042-thekvondo-wtf"));
-							} catch (Exception e1) {
-							}
-						}
-						if (s_choice_Vud.equals("Ушу")) {
-							try {
-								desktop.browse(new URI("https://bokuto.com.ua/odejda/taichi/"));
-							} catch (Exception e1) {
-							}
-						}
-					}
-
+					});
 				}
 
 			} else { // Важка атлетика
@@ -901,18 +906,22 @@ public class Oputuvanna1 extends JFrame {
 					s_rekomendacia = "res" + "/" + "Важка атлетика" + "/" + "MaxFinansu.png";
 				}
 
-				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
-						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
-					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
-							"Увага", JOptionPane.WARNING_MESSAGE);
-				} else {
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+								|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+							JOptionPane.showMessageDialog(null,
+									"На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.", "Увага",
+									JOptionPane.WARNING_MESSAGE);
+						} else {
 
-					try {
-						desktop.browse(new URI("http://terrasport.ua/dir_heavy_weight.htm"));
-					} catch (Exception e1) {
+							try {
+								desktop.browse(new URI("http://terrasport.ua/dir_heavy_weight.htm"));
+							} catch (Exception e1) {
+							}
+						}
 					}
-				}
-
+				});
 			}
 
 		} else {
@@ -971,18 +980,22 @@ public class Oputuvanna1 extends JFrame {
 					}
 				}
 
-				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
-						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
-					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
-							"Увага", JOptionPane.WARNING_MESSAGE);
-				} else {
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+								|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+							JOptionPane.showMessageDialog(null,
+									"На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.", "Увага",
+									JOptionPane.WARNING_MESSAGE);
+						} else {
 
-					try {
-						desktop.browse(new URI("https://nicebike.ru/lodki/odegda_dlia_grebli/"));
-					} catch (Exception e1) {
+							try {
+								desktop.browse(new URI("https://nicebike.ru/lodki/odegda_dlia_grebli/"));
+							} catch (Exception e1) {
+							}
+						}
 					}
-				}
-				
+				});
 			} else { // Альпінізм
 				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
@@ -995,19 +1008,23 @@ public class Oputuvanna1 extends JFrame {
 						|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
 					s_rekomendacia = "res" + "/" + "Альпінізм" + "/" + "MaxFinansu.png";
 				}
-				
-				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
-						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
-					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
-							"Увага", JOptionPane.WARNING_MESSAGE);
-				} else {
 
-					try {
-						desktop.browse(new URI("http://alp.com.ua/odezjda-i-obuv"));
-					} catch (Exception e1) {
+				b_ekipirivka.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
+								|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
+							JOptionPane.showMessageDialog(null,
+									"На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.", "Увага",
+									JOptionPane.WARNING_MESSAGE);
+						} else {
+
+							try {
+								desktop.browse(new URI("http://alp.com.ua/odezjda-i-obuv"));
+							} catch (Exception e1) {
+							}
+						}
 					}
-				}
-				
+				});
 			}
 
 			getContentPane().addMouseListener(new MouseAdapter() {
