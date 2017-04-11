@@ -66,7 +66,7 @@ public class Oputuvanna extends JFrame {
 				if (s_choice_VudSportu.equals("Футбол") && boolean_ZminaSporty == false
 						|| s_choice_VudSportu.equals("Баскетбол") && boolean_ZminaSporty == false
 						|| s_choice_VudSportu.equals("Волейбол") && boolean_ZminaSporty == false
-						|| s_choice_VudSportu.equals("Ганбол") && boolean_ZminaSporty == false
+						|| s_choice_VudSportu.equals("Гандбол") && boolean_ZminaSporty == false
 						|| s_choice_VudSportu.equals("Хокей") && boolean_ZminaSporty == false) {
 
 					ocustutu();
@@ -260,7 +260,7 @@ public class Oputuvanna extends JFrame {
 		choice_VudSportu.add("Волейбол");
 		choice_VudSportu.add("Футбол");
 		choice_VudSportu.add("Баскетбол");
-		choice_VudSportu.add("Ганбол");
+		choice_VudSportu.add("Гандбол");
 		choice_VudSportu.add("Хокей");
 
 		choice_VudSportu.add("Бойові мистецтва");
@@ -303,7 +303,7 @@ public class Oputuvanna extends JFrame {
 				String s_choice_VudVesluvanna = choice_VudVesluvanna.getSelectedItem();
 
 				if (s_choice_VudSportu.equals("Волейбол") || s_choice_VudSportu.equals("Футбол")
-						|| s_choice_VudSportu.equals("Баскетбол") || s_choice_VudSportu.equals("Ганбол")
+						|| s_choice_VudSportu.equals("Баскетбол") || s_choice_VudSportu.equals("Гандбол")
 						|| s_choice_VudSportu.equals("Хокей")) {
 					Oputuvanna1 oputuvanna1 = new Oputuvanna1();
 					oputuvanna1.OputuvannaKomanda(s_choice_Vik, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,

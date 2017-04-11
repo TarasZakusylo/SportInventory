@@ -134,7 +134,7 @@ public class Oputuvanna1 extends JFrame {
 					}
 				});
 			}
-			if (s_choice_VudSportu.equals("Ганбол")) {
+			if (s_choice_VudSportu.equals("Гандбол")) {
 				s_rekomendacia = "res" + "/" + "Handball" + "/" + "MaxFinansu.png";
 				if (i_Komanda >= 4) {
 					l_rokomand_zagalno = new JLabel(
@@ -171,7 +171,6 @@ public class Oputuvanna1 extends JFrame {
 				});
 
 			}
-
 		}
 		if (s_choice_Finansu.equals("Важко відповісти")) {
 			l_min_finansu = new JLabel("Ваш бюджет досить вільний,");
@@ -235,9 +234,8 @@ public class Oputuvanna1 extends JFrame {
 						}
 					}
 				});
-
 			}
-			if (s_choice_VudSportu.equals("Ганбол")) {
+			if (s_choice_VudSportu.equals("Гандбол")) {
 				s_rekomendacia = "res" + "/" + "Handball" + "/" + "NormFinansu.png";
 				if (i_Komanda >= 4) {
 					l_rokomand_zagalno = new JLabel(
@@ -254,7 +252,6 @@ public class Oputuvanna1 extends JFrame {
 						}
 					}
 				});
-
 			}
 			if (s_choice_VudSportu.equals("Хокей")) {
 				s_rekomendacia = "res" + "/" + "Хокей" + "/" + "NormFinansu.png";
@@ -273,9 +270,7 @@ public class Oputuvanna1 extends JFrame {
 						}
 					}
 				});
-
 			}
-
 		}
 		if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 				|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
@@ -289,7 +284,6 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
-
 			}
 			if (s_choice_VudSportu.equals("Футбол")) {
 				s_rekomendacia = "res" + "/" + "Footboll" + "/" + "MinFinansu.png";
@@ -298,7 +292,6 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
-
 			}
 			if (s_choice_VudSportu.equals("Баскетбол")) {
 				s_rekomendacia = "res" + "/" + "Basketball" + "/" + "MinFinansu.png";
@@ -307,16 +300,14 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
-
 			}
-			if (s_choice_VudSportu.equals("Ганбол")) {
+			if (s_choice_VudSportu.equals("Гандбол")) {
 				s_rekomendacia = "res" + "/" + "Handball" + "/" + "MinFinansu.png";
 				if (i_Komanda >= 4) {
 					l_rokomand_zagalno = new JLabel("рекомендується власноруч зробити ворота (із 3 паль)");
 				} else {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
-				}
-			}
+				}			}
 			if (s_choice_VudSportu.equals("Хокей")) {
 				s_rekomendacia = "res" + "/" + "Хокей" + "/" + "MinFinansu.png";
 				if (i_Komanda >= 4) {
@@ -326,18 +317,14 @@ public class Oputuvanna1 extends JFrame {
 					l_rokomand_zagalno = new JLabel("рекомендується індивідуальні вправи (чи/або прийоми в парі)");
 				}
 			}
-
 			b_ekipirivka.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-
 					JOptionPane.showMessageDialog(null, "На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.",
 							"Увага", JOptionPane.WARNING_MESSAGE);
 				}
-
 			});
-
 		}
-
+		
 		l_rokomand_zagalno.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		l_rokomand_zagalno.setHorizontalAlignment(SwingConstants.CENTER);
 		l_rokomand_zagalno.setBounds(12, 174, 770, 34);
@@ -979,7 +966,6 @@ public class Oputuvanna1 extends JFrame {
 						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Каное" + "/" + "MaxFinansu.png";
 					}
 				}
-
 				b_ekipirivka.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
@@ -988,7 +974,6 @@ public class Oputuvanna1 extends JFrame {
 									"На жаль, Ваш бюджет не дозволяє Вам купувати екіпіровку.", "Увага",
 									JOptionPane.WARNING_MESSAGE);
 						} else {
-
 							try {
 								desktop.browse(new URI("https://nicebike.ru/lodki/odegda_dlia_grebli/"));
 							} catch (Exception e1) {
