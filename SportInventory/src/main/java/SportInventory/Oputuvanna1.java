@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
+import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
@@ -53,6 +54,8 @@ public class Oputuvanna1 extends JFrame {
 	private JScrollPane scrollPane_Recomandacia;
 
 	JButton b_ekipirivka = new JButton("Екіпіровка");
+	
+	private JLabel l_fon;
 
 	public void OputuvannaKomanda(String s_choice_Vik, String s_choice_Vaga, String s_choice_Zrist,
 			String s_choice_Zdorovj, String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Komanda) {
@@ -643,6 +646,7 @@ public class Oputuvanna1 extends JFrame {
 
 		JLabel l_Hapka = new JLabel("Вам рекомендується придбати:");
 		l_Hapka.setFont(new Font("Monotype Corsiva", Font.BOLD, 50));
+		l_Hapka.setForeground(Color.BLUE);
 		l_Hapka.setHorizontalAlignment(SwingConstants.CENTER);
 		l_Hapka.setBounds(12, 13, 770, 54);
 		getContentPane().add(l_Hapka);
@@ -703,6 +707,14 @@ public class Oputuvanna1 extends JFrame {
 			getContentPane().add(b_Klub);
 		}
 
+		// fon
+		
+		l_fon = new JLabel("");
+		l_fon.setIcon(new ImageIcon("res/fon_Rezultat.png"));
+		l_fon.setBounds(0, 0, 800, 600);
+		getContentPane().add(l_fon);
+		
+		
 	}
 
 	public void OputuvannaZdorovja(String s_choice_Vik, String s_choice_Stat, String s_choice_Vaga,
