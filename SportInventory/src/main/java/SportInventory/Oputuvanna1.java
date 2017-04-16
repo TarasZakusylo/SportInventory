@@ -56,9 +56,8 @@ public class Oputuvanna1 extends JFrame {
 	private JButton b_ekipirivka = new JButton("Екіпіровка");
 	private JButton b_Hkola = new JButton("Спортивні школи");
 	private JButton b_Klub = new JButton("Ігрові клуби");
- 	private JButton b_misce = new JButton("Місця для занять");
 	private JButton b_kuputu = new JButton("Перейти до купівлі");
-	
+
 	private JLabel l_fon;
 
 	public void OputuvannaKomanda(String s_choice_Vik, String s_choice_Vaga, String s_choice_Zrist,
@@ -69,8 +68,11 @@ public class Oputuvanna1 extends JFrame {
 		}
 
 		i_Komanda = Integer.parseInt(s_choice_Komanda);
-
-		l_komands_zagalno = new JLabel("а команда має " + i_Komanda + " гравців,");
+		if (i_Komanda == 1) {
+			l_komands_zagalno = new JLabel("а команда має " + i_Komanda + " гравця,");
+		} else {
+			l_komands_zagalno = new JLabel("а команда має " + i_Komanda + " гравців,");
+		}
 		l_komands_zagalno.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		l_komands_zagalno.setHorizontalAlignment(SwingConstants.CENTER);
 		l_komands_zagalno.setBounds(12, 127, 770, 34);
@@ -82,11 +84,11 @@ public class Oputuvanna1 extends JFrame {
 
 		if (s_choice_Finansu.equals("Для мене гроші - не проблема")
 				|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
-			l_min_finansu = new JLabel("Ваш бюджет це повна свобода,");
+			l_min_finansu = new JLabel("Ваш бюджет - це повна свобода,");
 			if (s_choice_Vik.equals("до 18")) {
-				s_Hkola_Klub = "cпорт школи";
+				s_Hkola_Klub = "cпортшколи";
 			} else {
-				s_Hkola_Klub = "Ігрового клубу";
+				s_Hkola_Klub = "ігрового клубу";
 			}
 			l_rokomand_zagalno = new JLabel("рекомендується вступити до " + s_Hkola_Klub);
 
@@ -105,7 +107,7 @@ public class Oputuvanna1 extends JFrame {
 						} catch (Exception e1) {
 						}
 					}
-				});				
+				});
 			}
 			if (s_choice_VudSportu.equals("Футбол")) {
 				s_rekomendacia = "res" + "/" + "Footboll" + "/" + "MaxFinansu.png";
@@ -182,9 +184,9 @@ public class Oputuvanna1 extends JFrame {
 		if (s_choice_Finansu.equals("Важко відповісти")) {
 			l_min_finansu = new JLabel("Ваш бюджет досить вільний,");
 			if (s_choice_Vik.equals("до 18")) {
-				s_Hkola_Klub = "cпорт школи";
+				s_Hkola_Klub = "cпортшколи";
 			} else {
-				s_Hkola_Klub = "Ігрового клубу";
+				s_Hkola_Klub = "ігрового клубу";
 			}
 			l_rokomand_zagalno = new JLabel("рекомендується вступити до " + s_Hkola_Klub);
 
@@ -351,177 +353,121 @@ public class Oputuvanna1 extends JFrame {
 
 		if (s_choice_VudSportu.equals("Волейбол")) {
 
-//			b_kuputu.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI("https://footballstyle.com.ua/"));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-			b_misce.addActionListener(new ActionListener() {
+			// b_kuputu.addActionListener(new ActionListener() {
+			// public void actionPerformed(ActionEvent arg0) {
+			// try {
+			// desktop.browse(new URI("https://footballstyle.com.ua/"));
+			// } catch (Exception e1) {
+			// }
+			// }
+			// });
+
+			b_Hkola.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					Map map = new Map("Волейбол");
+					new Map("Волейбол", 0);
+					setVisible(false);
 				}
 			});
-//			b_Hkola.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_Klub.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
+			b_Klub.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Волейбол", 1);
+					setVisible(false);
+				}
+			});
 		}
 		if (s_choice_VudSportu.equals("Футбол")) {
 
-//			b_kuputu.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_misce.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_Hkola.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_Klub.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
+			// b_kuputu.addActionListener(new ActionListener() {
+			// public void actionPerformed(ActionEvent arg0) {
+			// try {
+			// desktop.browse(new URI(""));
+			// } catch (Exception e1) {
+			// }
+			// }
+			// });
+			b_Hkola.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Футбол", 0);
+					setVisible(false);
+				}
+			});
+			b_Klub.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Футбол", 1);
+					setVisible(false);
+				}
+			});
 		}
 		if (s_choice_VudSportu.equals("Баскетбол")) {
 
-//			b_kuputu.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_misce.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_Hkola.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_Klub.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
+			// b_kuputu.addActionListener(new ActionListener() {
+			// public void actionPerformed(ActionEvent arg0) {
+			// try {
+			// desktop.browse(new URI(""));
+			// } catch (Exception e1) {
+			// }
+			// }
+			// });
+			b_Hkola.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Баскетбол", 0);
+					setVisible(false);
+				}
+			});
+			b_Klub.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Баскетбол", 1);
+					setVisible(false);
+				}
+			});
 		}
 		if (s_choice_VudSportu.equals("Гандбол")) {
 
-//			b_kuputu.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_misce.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_Hkola.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_Klub.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
+			// b_kuputu.addActionListener(new ActionListener() {
+			// public void actionPerformed(ActionEvent arg0) {
+			// try {
+			// desktop.browse(new URI(""));
+			// } catch (Exception e1) {
+			// }
+			// }
+			// });
+			b_Hkola.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Гандбол", 0);
+					setVisible(false);
+				}
+			});
+			b_Klub.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Гандбол", 1);
+					setVisible(false);
+				}
+			});
 		}
 		if (s_choice_VudSportu.equals("Хокей")) {
 
-//			b_kuputu.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_misce.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_Hkola.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
-//			b_Klub.addActionListener(new ActionListener() {
-//				public void actionPerformed(ActionEvent arg0) {
-//					try {
-//						desktop.browse(new URI(""));
-//					} catch (Exception e1) {
-//					}
-//				}
-//			});
+			// b_kuputu.addActionListener(new ActionListener() {
+			// public void actionPerformed(ActionEvent arg0) {
+			// try {
+			// desktop.browse(new URI(""));
+			// } catch (Exception e1) {
+			// }
+			// }
+			// });
+			b_Hkola.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Хокей", 0);
+					setVisible(false);
+				}
+			});
+			b_Klub.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Хокей", 1);
+					setVisible(false);
+				}
+			});
 		}
-		
+
 		setVisible(true);
 	}
 
@@ -725,6 +671,19 @@ public class Oputuvanna1 extends JFrame {
 				}
 			});
 
+			b_Hkola.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Шахи", 0);
+					setVisible(false);
+				}
+			});
+			b_Klub.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Шахи", 1);
+					setVisible(false);
+				}
+			});
+
 		} else {
 			// стрільба
 			l_komentar = new JLabel("Даний вид спорту досить вибагливий та коштовний.");
@@ -790,6 +749,19 @@ public class Oputuvanna1 extends JFrame {
 				}
 			});
 
+			b_Hkola.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Cтрільба", 0);
+					setVisible(false);
+				}
+			});
+			b_Klub.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new Map("Cтрільба", 1);
+					setVisible(false);
+				}
+			});
+
 		}
 
 		hapka(s_choice_Vik);
@@ -842,13 +814,10 @@ public class Oputuvanna1 extends JFrame {
 
 		// де-які важливі деталі
 
-		b_kuputu.setBounds(0, 524, 200, 41);
+		b_kuputu.setBounds(0, 524, 266, 41);
 		getContentPane().add(b_kuputu);
 
-		b_misce.setBounds(397, 524, 200, 41);
-		getContentPane().add(b_misce);
-
-		b_ekipirivka.setBounds(199, 524, 200, 41);
+		b_ekipirivka.setBounds(266, 524, 266, 41);
 		getContentPane().add(b_ekipirivka);
 
 		JLabel l_rekomandacia = new JLabel();
@@ -864,11 +833,11 @@ public class Oputuvanna1 extends JFrame {
 		l_rekomandacia.setIcon(new ImageIcon(image_vuvestuProfil));
 
 		if (s_choice_Vik.equals("до 18")) {
-			b_Hkola.setBounds(594, 524, 200, 41);			
+			b_Hkola.setBounds(532, 524, 267, 41);
 		} else {
-			b_Klub.setBounds(594, 524, 200, 41);			
+			b_Klub.setBounds(532, 524, 267, 41);
 		}
-		
+
 		getContentPane().add(b_Hkola);
 		getContentPane().add(b_Klub);
 
@@ -1060,6 +1029,19 @@ public class Oputuvanna1 extends JFrame {
 					});
 				}
 
+				b_Hkola.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						new Map("Бойові мистецтва", 0);
+						setVisible(false);
+					}
+				});
+				b_Klub.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						new Map("Бойові мистецтва", 1);
+						setVisible(false);
+					}
+				});
+
 			} else { // Важка атлетика
 				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")
@@ -1083,6 +1065,19 @@ public class Oputuvanna1 extends JFrame {
 							} catch (Exception e1) {
 							}
 						}
+					}
+				});
+
+				b_Hkola.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						new Map("Важка атлетика", 0);
+						setVisible(false);
+					}
+				});
+				b_Klub.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						new Map("Важка атлетика", 1);
+						setVisible(false);
 					}
 				});
 			}
@@ -1157,6 +1152,20 @@ public class Oputuvanna1 extends JFrame {
 						}
 					}
 				});
+
+				b_Hkola.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						new Map("Веслування", 0);
+						setVisible(false);
+					}
+				});
+				b_Klub.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						new Map("Веслування", 1);
+						setVisible(false);
+					}
+				});
+
 			} else { // Альпінізм
 				if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
 						|| s_choice_Finansu.equals("Ледве зводжу кінці з кінцями")) {
@@ -1186,6 +1195,20 @@ public class Oputuvanna1 extends JFrame {
 						}
 					}
 				});
+
+				b_Hkola.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						new Map("Альпінізм", 0);
+						setVisible(false);
+					}
+				});
+				b_Klub.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						new Map("Альпінізм", 1);
+						setVisible(false);
+					}
+				});
+
 			}
 
 			getContentPane().addMouseListener(new MouseAdapter() {
@@ -1203,7 +1226,7 @@ public class Oputuvanna1 extends JFrame {
 		setVisible(true);
 	}
 
-	void akademi4neVesludanna() {
+	public void akademi4neVesludanna() {
 		if (boolean_Akademi4neVesluvanna == false) {
 
 			JOptionPane.showMessageDialog(null, "Академічне веслування - командний вид спорту.");
@@ -1211,5 +1234,4 @@ public class Oputuvanna1 extends JFrame {
 			boolean_Akademi4neVesluvanna = true;
 		}
 	}
-
 }
