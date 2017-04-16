@@ -353,14 +353,14 @@ public class Oputuvanna1 extends JFrame {
 
 		if (s_choice_VudSportu.equals("Волейбол")) {
 
-			// b_kuputu.addActionListener(new ActionListener() {
-			// public void actionPerformed(ActionEvent arg0) {
-			// try {
-			// desktop.browse(new URI("https://footballstyle.com.ua/"));
-			// } catch (Exception e1) {
-			// }
-			// }
-			// });
+			b_kuputu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					try {
+						desktop.browse(new URI("http://terrasport.ua/dir_volleyball.htm"));
+					} catch (Exception e1) {
+					}
+				}
+			});
 
 			b_Hkola.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {

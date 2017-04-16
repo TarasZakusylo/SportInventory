@@ -485,8 +485,7 @@ public class Map extends JFrame {
 		});
 
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\Zakkk\\Desktop\\map.jpg"));
-		// label.setIcon(new ImageIcon("res/map.jpg"));
+		label.setIcon(new ImageIcon("res/map.jpg"));
 		label.setBounds(0, 0, 794, 565);
 		getContentPane().add(label);
 
