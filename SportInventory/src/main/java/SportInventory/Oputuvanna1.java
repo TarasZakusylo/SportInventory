@@ -377,14 +377,14 @@ public class Oputuvanna1 extends JFrame {
 		}
 		if (s_choice_VudSportu.equals("Футбол")) {
 
-			// b_kuputu.addActionListener(new ActionListener() {
-			// public void actionPerformed(ActionEvent arg0) {
-			// try {
-			// desktop.browse(new URI(""));
-			// } catch (Exception e1) {
-			// }
-			// }
-			// });
+			b_kuputu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					try {
+						desktop.browse(new URI("http://11vs11.com.ua/ru/catalog/?f=2&p=1&id_0=4&id_1=73&id_2=0"));
+					} catch (Exception e1) {
+					}
+				}
+			});
 			b_Hkola.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					new Map("Футбол", 0);
@@ -400,14 +400,15 @@ public class Oputuvanna1 extends JFrame {
 		}
 		if (s_choice_VudSportu.equals("Баскетбол")) {
 
-			// b_kuputu.addActionListener(new ActionListener() {
-			// public void actionPerformed(ActionEvent arg0) {
-			// try {
-			// desktop.browse(new URI(""));
-			// } catch (Exception e1) {
-			// }
-			// }
-			// });
+			b_kuputu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					try {
+						desktop.browse(new URI("http://terrasport.ua/dir_basketball.htm"));
+						desktop.browse(new URI("http://sportoborudovanie.com/vtoroj-katalog/vtoroj-katalog-3.html"));
+					} catch (Exception e1) {
+					}
+				}
+			});
 			b_Hkola.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					new Map("Баскетбол", 0);
@@ -423,14 +424,15 @@ public class Oputuvanna1 extends JFrame {
 		}
 		if (s_choice_VudSportu.equals("Гандбол")) {
 
-			// b_kuputu.addActionListener(new ActionListener() {
-			// public void actionPerformed(ActionEvent arg0) {
-			// try {
-			// desktop.browse(new URI(""));
-			// } catch (Exception e1) {
-			// }
-			// }
-			// });
+			b_kuputu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					try {
+						desktop.browse(new URI("http://prom.ua/Setka-dlya-gandbola.html"));
+						desktop.browse(new URI("http://gra.ua/catalog/handball"));
+					} catch (Exception e1) {
+					}
+				}
+			});
 			b_Hkola.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					new Map("Гандбол", 0);
@@ -446,14 +448,14 @@ public class Oputuvanna1 extends JFrame {
 		}
 		if (s_choice_VudSportu.equals("Хокей")) {
 
-			// b_kuputu.addActionListener(new ActionListener() {
-			// public void actionPerformed(ActionEvent arg0) {
-			// try {
-			// desktop.browse(new URI(""));
-			// } catch (Exception e1) {
-			// }
-			// }
-			// });
+			b_kuputu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					try {
+						desktop.browse(new URI("http://zakupka.com/t/inventar-dlya-hokkeya-8502/"));
+					} catch (Exception e1) {
+					}
+				}
+			});
 			b_Hkola.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					new Map("Хокей", 0);
@@ -635,7 +637,7 @@ public class Oputuvanna1 extends JFrame {
 	}
 
 	public void OputuvannaNoZdorovja(final String s_choice_Finansu, String s_choice_VudSportu, String s_choice_Uminna,
-			final String s_choice_VudStrilbu, String s_choice_VudZbroi, String s_choice_Vik) {
+			final String s_choice_VudStrilbu, final String s_choice_VudZbroi, String s_choice_Vik) {
 
 		scrollPane_Recomandacia = new JScrollPane();
 		scrollPane_Recomandacia.setBounds(0, 116, 794, 409);
@@ -665,6 +667,15 @@ public class Oputuvanna1 extends JFrame {
 				s_rekomendacia = "res" + "/" + "Шахи" + "/" + "MaxFinansu.png";
 			}
 
+			b_kuputu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					try {
+						desktop.browse(new URI("http://mozok.com.ua/uk/catalog/suites/"));
+					} catch (Exception e1) {
+					}
+				}
+			});
+			
 			b_ekipirivka.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					JOptionPane.showMessageDialog(null, "Даний вид спорту не передбачає екіпіровки");
@@ -737,6 +748,23 @@ public class Oputuvanna1 extends JFrame {
 				@Override
 				public void mouseEntered(MouseEvent arg0) {
 					stendova(s_choice_VudStrilbu);
+				}
+			});
+			
+			b_kuputu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					try {
+					if (s_choice_VudZbroi.equals("Гвинтівка")) {
+						desktop.browse(new URI("http://ligasporta.com.ua/ua/shop/category/pnevmaticheskoe-oruzhie/pnevmaticheskie-vintovki"));
+					}
+					if (s_choice_VudZbroi.equals("Пістолет")) {
+						desktop.browse(new URI("http://groosha.ua/catalog/pistolety/"));
+					}
+					if (s_choice_VudZbroi.equals("Лук")) {
+						desktop.browse(new URI("https://www.decathlon.ru/C-101118-strel-ba-iz-luka"));
+					}						
+					} catch (Exception e1) {
+					}
 				}
 			});
 
@@ -897,6 +925,15 @@ public class Oputuvanna1 extends JFrame {
 						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "БоротьбаАйкідоПанкратіонСумо" + "/"
 								+ "MaxFinansu.png";
 					}
+					
+					b_kuputu.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							try {
+								desktop.browse(new URI("http://adx.in.ua/g3650237-borba"));
+							} catch (Exception e1) {
+							}
+						}
+					});					
 
 					b_ekipirivka.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
@@ -950,6 +987,15 @@ public class Oputuvanna1 extends JFrame {
 						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "БоксСамбоКікбоксинг" + "/"
 								+ "MaxFinansu.png";
 					}
+					
+					b_kuputu.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							try {
+								desktop.browse(new URI("http://adx.in.ua/g4836866-boks-ekipirovka-forma"));
+							} catch (Exception e1) {
+							}
+						}
+					});
 
 					b_ekipirivka.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
@@ -997,6 +1043,15 @@ public class Oputuvanna1 extends JFrame {
 						s_rekomendacia = "res" + "/" + "Бойові мистецтва" + "/" + "ТхеквондоТеквандоУшу" + "/"
 								+ "MaxFinansu.png";
 					}
+					
+					b_kuputu.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							try {
+								desktop.browse(new URI("http://adx.in.ua/g4748042-thekvondo-wtf"));
+							} catch (Exception e1) {
+							}
+						}
+					});
 
 					b_ekipirivka.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
@@ -1050,6 +1105,15 @@ public class Oputuvanna1 extends JFrame {
 				} else {
 					s_rekomendacia = "res" + "/" + "Важка атлетика" + "/" + "MaxFinansu.png";
 				}
+				
+				b_kuputu.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI("http://ligasporta.com.ua/shop/category/tiazhelaia-atletika"));
+						} catch (Exception e1) {
+						}
+					}
+				});
 
 				b_ekipirivka.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -1137,6 +1201,17 @@ public class Oputuvanna1 extends JFrame {
 						s_rekomendacia = "res" + "/" + "Веслування" + "/" + "Каное" + "/" + "MaxFinansu.png";
 					}
 				}
+				
+				b_kuputu.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI("https://f.ua/shop/grebnye-trenazhery/"));
+							desktop.browse(new URI("https://meryl.com.ua/aksessuary_dlya_grebli/"));
+						} catch (Exception e1) {
+						}
+					}
+				});
+				
 				b_ekipirivka.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						if (s_choice_Finansu.equals("Часто задумуюсь про свій бюджет")
@@ -1178,6 +1253,15 @@ public class Oputuvanna1 extends JFrame {
 						|| s_choice_Finansu.equals("Дуже рідко відмовляю собі в чомусь")) {
 					s_rekomendacia = "res" + "/" + "Альпінізм" + "/" + "MaxFinansu.png";
 				}
+				
+				b_kuputu.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try {
+							desktop.browse(new URI("http://alp.com.ua/turizm-i-alpinism/alpinizm"));
+						} catch (Exception e1) {
+						}
+					}
+				});
 
 				b_ekipirivka.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
