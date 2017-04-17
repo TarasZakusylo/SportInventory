@@ -306,8 +306,8 @@ public class Oputuvanna extends JFrame {
 				if (s_choice_VudSportu.equals("Волейбол") || s_choice_VudSportu.equals("Футбол")
 						|| s_choice_VudSportu.equals("Баскетбол") || s_choice_VudSportu.equals("Гандбол")
 						|| s_choice_VudSportu.equals("Хокей")) {
-					Oputuvanna1 oputuvanna1 = new Oputuvanna1();
-					oputuvanna1.OputuvannaKomanda(s_choice_Vik, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,
+					Rekomendacia rekomendacia = new Rekomendacia();
+					rekomendacia.OputuvannaKomanda(s_choice_Vik, s_choice_Vaga, s_choice_Zrist, s_choice_Zdorovj,
 							s_choice_Finansu, s_choice_VudSportu, s_choice_Komanda);
 					setVisible(false);
 				}
@@ -329,33 +329,33 @@ public class Oputuvanna extends JFrame {
 							}
 						}
 					} else {
-						Oputuvanna1 Oputuvanna1 = new Oputuvanna1();
-						Oputuvanna1.OputuvannaNoZdorovja(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
+						Rekomendacia Rekomendacia = new Rekomendacia();
+						Rekomendacia.OputuvannaNoZdorovja(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
 								s_choice_VudStrilbu, s_choice_VudZbroi, s_choice_Vik);
 						setVisible(false);
 					}
 				}
 				if (s_choice_VudSportu.equals("Шахи")) {
-					Oputuvanna1 Oputuvanna1 = new Oputuvanna1();
-					Oputuvanna1.OputuvannaNoZdorovja(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
+					Rekomendacia Rekomendacia = new Rekomendacia();
+					Rekomendacia.OputuvannaNoZdorovja(s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
 							s_choice_VudStrilbu, s_choice_VudZbroi, s_choice_Vik);
 					setVisible(false);
 				}
 				if (s_choice_VudSportu.equals("Важка атлетика") || s_choice_VudSportu.equals("Альпінізм")) {
-					Oputuvanna1 oputuvannaZdorovja = new Oputuvanna1();
+					Rekomendacia oputuvannaZdorovja = new Rekomendacia();
 					oputuvannaZdorovja.OputuvannaZdorovja(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist,
 							s_choice_Zdorovj, s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna, "1");
 					setVisible(false);
 				}
 				if (s_choice_VudSportu.equals("Бойові мистецтва")) {
-					Oputuvanna1 oputuvannaZdorovja = new Oputuvanna1();
+					Rekomendacia oputuvannaZdorovja = new Rekomendacia();
 					oputuvannaZdorovja.OputuvannaZdorovja(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist,
 							s_choice_Zdorovj, s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
 							s_choice_VudBoyoviM);
 					setVisible(false);
 				}
 				if (s_choice_VudSportu.equals("Веслування")) {
-					Oputuvanna1 oputuvannaZdorovja = new Oputuvanna1();
+					Rekomendacia oputuvannaZdorovja = new Rekomendacia();
 					oputuvannaZdorovja.OputuvannaZdorovja(s_choice_Vik, s_choice_Stat, s_choice_Vaga, s_choice_Zrist,
 							s_choice_Zdorovj, s_choice_Finansu, s_choice_VudSportu, s_choice_Uminna,
 							s_choice_VudVesluvanna);

@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Oputuvanna1 extends JFrame {
+public class Rekomendacia extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
